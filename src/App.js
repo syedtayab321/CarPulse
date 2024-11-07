@@ -10,6 +10,7 @@ import WarrantyPolicy from "./Pages/WrantyPolicy";
 import FAQs from "./Pages/Faqs";
 import OfferDetails from "./Pages/offerDetails";
 import ContactUs from "./Pages/ContactUs";
+import LoginPage from "./Components/CommonComponents/Login";
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
           <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />
           <Route path='/carServiceDetails' element={<OfferDetails/>} />
           <Route path='/contactus' element={<ContactUs/>} />
+          <Route path='/login' element={<LoginPage/>} />
       </Routes>
-
         <WarrantyPolicy/>
         <FAQs/>
         <Footer/>

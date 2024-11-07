@@ -1,9 +1,14 @@
 import React from 'react';
 import logo from '../../assets/images/card1.jpg';
 import '../../assets/css/navbar.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/login');
+  }
   return (
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
       <div className="container">
@@ -31,15 +36,16 @@ const Navbar = () => {
               <Link className="nav-link" to="/aboutus">About</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="//services">services</Link>
+              <Link className="nav-link" to="/services">services</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contactus">Contact us</Link>
             </li>
-            <li className="nav-item">
-              <button className="btn btn-success" >Login</button>
+            <li className="btn">
+              <button className="btn btn-success" onClick={handleClick} >Login</button>
             </li>
-              <li className="nav-item">
+
+            <li className="btn">
               <button className="btn btn-outline-dark" >Create Account</button>
             </li>
           </ul>
