@@ -1,0 +1,22 @@
+.warranty-section {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.warranty-section h2 {
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.warranty-content h4 {
+    color: #007bff;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+.warranty-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}

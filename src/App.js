@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Routes,Route} from "react-router-dom";
+import MainPage from "./Pages/MainPage";
+import Navbar from "./Components/CommonComponents/Navbar";
+import Footer from "./Components/CommonComponents/footer";
+import MajorServicePage from "./Components/MainPageComponents/MajorServicePage";
+import AboutUsPage from "./Pages/Aboutus";
+import ServicesDetailsPage from "./Pages/ServiceDetailsPage";
+import WarrantyPolicy from "./Pages/WrantyPolicy";
+import FAQs from "./Pages/Faqs";
+import OfferDetails from "./Pages/offerDetails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar/>
+      <Routes>
+          <Route path='/' element={<MainPage/>} />
+          <Route path='/aboutus' element={<AboutUsPage/>} />
+          <Route path='/services' element={<MajorServicePage/>} />
+          <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />
+          <Route path='/carServiceDetails' element={<OfferDetails/>} />
+      </Routes>
+
+        <WarrantyPolicy/>
+        <FAQs/>
+        <Footer/>
+    </>
   );
 }
 

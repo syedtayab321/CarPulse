@@ -1,0 +1,36 @@
+.footer-section {
+    background-color: #333;
+    color: #fff;
+    padding-top: 2rem;
+}
+
+.footer-section h5 {
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-section p, .footer-section a {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.footer-section a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-section .social-icons a {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 1rem;
+}
