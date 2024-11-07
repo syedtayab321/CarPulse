@@ -9,6 +9,7 @@ import ServicesDetailsPage from "./Pages/ServiceDetailsPage";
 import WarrantyPolicy from "./Pages/WrantyPolicy";
 import FAQs from "./Pages/Faqs";
 import OfferDetails from "./Pages/offerDetails";
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/services' element={<MajorServicePage/>} />
           <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />
           <Route path='/carServiceDetails' element={<OfferDetails/>} />
+          <Route path='/contactus' element={<ContactUs/>} />
       </Routes>
 
         <WarrantyPolicy/>
