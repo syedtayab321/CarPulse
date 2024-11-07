@@ -52,3 +52,18 @@
         padding: 0.4rem 1rem;
     }
 }
+
+/* Navbar toggler fix */
+.navbar-collapse {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-color: #000;
+}
