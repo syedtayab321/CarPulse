@@ -11,6 +11,7 @@ import FAQs from "./Pages/Faqs";
 import OfferDetails from "./Pages/offerDetails";
 import ContactUs from "./Pages/ContactUs";
 import LoginPage from "./Components/CommonComponents/Login";
+import SignupPage from "./Components/CommonComponents/SignUpScreen";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/carServiceDetails' element={<OfferDetails/>} />
           <Route path='/contactus' element={<ContactUs/>} />
           <Route path='/login' element={<LoginPage/>} />
+          <Route path='/signup' element={<SignupPage/>} />
       </Routes>
         <WarrantyPolicy/>
         <FAQs/>

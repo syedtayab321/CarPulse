@@ -6,9 +6,14 @@ import { Link,useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/login');
+  const handleClick = (value) => {
+    if (value === 'login'){
+      navigate('/login');
+    }else if (value === 'signup'){
+      navigate('/signup');
+    }
   }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
       <div className="container">
@@ -42,11 +47,11 @@ const Navbar = () => {
               <Link className="nav-link" to="/contactus">Contact us</Link>
             </li>
             <li className="btn">
-              <button className="btn btn-success" onClick={handleClick} >Login</button>
+              <button className="btn btn-success" onClick={()=>handleClick('login')} >Login</button>
             </li>
 
             <li className="btn">
-              <button className="btn btn-outline-dark" >Create Account</button>
+              <button className="btn btn-outline-dark" onClick={()=>handleClick('signup')}>Create Account</button>
             </li>
           </ul>
         </div>

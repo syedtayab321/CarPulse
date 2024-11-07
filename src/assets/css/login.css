@@ -1,55 +1,172 @@
-.login-page {
-  background: url('https://plus.unsplash.com/premium_photo-1720192861639-1524439fc166?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9naW58ZW58MHx8MHx8fDA%3D') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+/*admin login css*/
+.login-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  .login-form-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+  }
+  .login-form-container h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .login-form-container .btn-custom {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  .login-form-container .form-group-custom {
+    margin-bottom: 1.5rem;
+  }
+  .login-form-container .form-control-custom {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+  }
+  .login-form-container .form-control-custom:focus {
+    border-color: #007bff;
+    box-shadow: none;
+  }
+  .login-form-container .forgot-password-link {
+    text-align: right;
+  }
+  .login-form-container .forgot-password-link a {
+    color: #007bff;
+  }
+  .login-form-container .forgot-password-link a:hover {
+    text-decoration: underline;
+  }
+  .login-form-container .signup-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .login-form-container .signup-link a {
+    color: #007bff;
+  }
+  .login-form-container .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+  .main-login-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+.main-login-section .login-container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    height: fit-content;
+    min-height: 90vh;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+.login-container .image-section{
+    width: 45%;
+}
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.login-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 500px;
+.login-section {
+    padding: 10px;
+    width: 55%;
 }
 
-.login-box h2 {
-  color: #333;
-  margin-bottom: 20px;
+.login-section h2 {
+    margin-top: 0;
+    font-size: 24px;
 }
 
-.login-box .form-control {
-  border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
+.login-section p {
+    margin: 10px 0;
+    color: #666;
 }
 
-.login-box button {
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #007bff;
-  width: 400px;
-  border: none;
-  color: white;
-  font-size: 16px;
+.login-section label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
 
-.login-box button:hover {
-  background-color: #0056b3;
+.login-section input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.login-box .text-center p {
-  font-size: 14px;
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.login-box .text-center p a {
-  color: #007bff;
-  text-decoration: none;
+.options a {
+    color: #007bff;
+    text-decoration: none;
 }
 
-.login-box .text-center p a:hover {
-  text-decoration: underline;
+.sign-in-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.google-sign-in-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    color: #040404;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sign-up {
+    text-align: center;
+    color: #666;
+}
+
+.sign-up a {
+    color: #007bff;
+    text-decoration: none;
+}
+@media (max-width: 770px){
+    .image-section img {
+    display: none;
+}
+.image-section{
+    display: none;
+}
+.login-section {
+    padding: 10px;
+    width: 100%;
+}
+.login-container{
+    height: fit-content;
+}
 }
