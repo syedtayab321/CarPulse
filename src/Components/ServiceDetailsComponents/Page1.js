@@ -2,8 +2,18 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../assets/css/servicesDetailsPage1.css';
 import { FaCar } from 'react-icons/fa';
+import {useNavigate} from "react-router-dom";
 
 function ServiceDetailsPage1() {
+  const userData = localStorage.getItem('user');
+  const navigate = useNavigate();
+  const handleBookNow = () => {
+      if(userData === null){
+        navigate('/signup');
+      }else{
+        navigate('/book-now');
+      }
+  }
   return (
     <div className="container my-5">
       <div className="top-bar py-2 text-center text-white">
@@ -74,7 +84,7 @@ function ServiceDetailsPage1() {
                 </div>
               ))}
             </div>
-            <button className="btn btn-danger book-now-btn">
+            <button className="btn btn-danger book-now-btn" onClick={handleBookNow}>
               BOOK NOW <FaCar className="car-icon animate-car" />
             </button>
           </div>

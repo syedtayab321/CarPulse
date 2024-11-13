@@ -4,10 +4,10 @@ import MainPage from "./Pages/MainPage";
 import Navbar from "./Components/CommonComponents/Navbar";
 import Footer from "./Components/CommonComponents/footer";
 import MajorServicePage from "./Components/MainPageComponents/MajorServicePage";
-import AboutUsPage from "./Pages/Aboutus";
+import AboutUsPage from "./Components/MainPageComponents/Aboutus";
 import ServicesDetailsPage from "./Pages/ServiceDetailsPage";
 import OfferDetails from "./Pages/offerDetails";
-import ContactUs from "./Pages/ContactUs";
+import ContactUs from "./Components/MainPageComponents/ContactUs";
 import LoginPage from "./Components/CommonComponents/Login";
 import SignupPage from "./Components/CommonComponents/SignUpScreen";
 import './App.css'
