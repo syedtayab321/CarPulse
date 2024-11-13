@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BattriesMainPage from "./BattriesPortal/BattriesMainPage";
 import CarRepair from "./Pages/CarRepair";
 import MobileCarService from "./Pages/MobileCarService";
+import RoadSideAssistantMainPage from "./Pages/RoadSideAssitantMain";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
           <Route path='/carRepair' element={<CarRepair/>} />
           <Route path='/mobileCarService' element={<MobileCarService/>} />
+          <Route path='/roadsideAssistant' element={<RoadSideAssistantMainPage/>} />
       </Routes>
         <Footer/>
     </>

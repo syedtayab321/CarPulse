@@ -70,10 +70,7 @@ const WarrantyPolicy = () => {
                   <li>✔ Terms & conditions apply</li>
                 </ul>
                 <p>
-                  We provide a 12 month/10,000 KM warranty with every car service.
-                  Whether you choose to buy genuine or aftermarket parts from us,
-                  both come with a hassle-free warranty policy. The labour is also
-                  covered under the warranty.
+                  We provide a 12 month/10,000 KM warranty with mechanical repairs excluding AC, electrical, seals and consumables. Whether you choose to buy genuine or aftermarket parts, both come with a hassle-free warranty policy. The labour is also covered under the warranty. Additional Terms apply.
                 </p>
               </div>
             </div>
@@ -82,23 +79,20 @@ const WarrantyPolicy = () => {
           <Tab.Pane eventKey="electrical">
             <div className="policy-details d-flex justify-content-between align-items-center p-4">
               <div className="duration">
-                <h1 className="text-success">12 MONTHS</h1>
+                <h1 className="text-success">6 MONTHS</h1>
                 <h3 className="text-center">OR</h3>
-                <h1 className="text-success">10,000 KM</h1>
+                <h1 className="text-success">5,000 KM</h1>
               </div>
               <div className="divider"></div>
               <div className="details">
                 <ul className="list-unstyled">
-                  <li>✔ 12 months or 10,000 KM - whichever comes first</li>
+                  <li>✔ 6 months or 5,000 KM - whichever comes first</li>
                   <li>✔ Warranty on parts and labour</li>
                   <li>✔ Hassle-free claims process</li>
                   <li>✔ Terms & conditions apply</li>
                 </ul>
                 <p>
-                  We provide a 12 month/10,000 KM warranty with every car service.
-                  Whether you choose to buy genuine or aftermarket parts from us,
-                  both come with a hassle-free warranty policy. The labour is also
-                  covered under the warranty.
+                  We provide a 6 month/5,000 KM warranty with all electrical repairs. Whether you choose to buy genuine or aftermarket parts from us, both come with a hassle-free warranty policy. The labour is also covered under the warranty.
                 </p>
               </div>
             </div>
@@ -107,23 +101,20 @@ const WarrantyPolicy = () => {
           <Tab.Pane eventKey="ac">
             <div className="policy-details d-flex justify-content-between align-items-center p-4">
               <div className="duration">
-                <h1 className="text-success">12 MONTHS</h1>
+                <h1 className="text-success">6 MONTHS</h1>
                 <h3 className="text-center">OR</h3>
-                <h1 className="text-success">10,000 KM</h1>
+                <h1 className="text-success">5,000 KM</h1>
               </div>
               <div className="divider"></div>
               <div className="details">
                 <ul className="list-unstyled">
-                  <li>✔ 12 months or 10,000 KM - whichever comes first</li>
+                  <li>✔ 6 months or 5,000 KM - whichever comes first</li>
                   <li>✔ Warranty on parts and labour</li>
                   <li>✔ Hassle-free claims process</li>
                   <li>✔ Terms & conditions apply</li>
                 </ul>
                 <p>
-                  We provide a 12 month/10,000 KM warranty with every car service.
-                  Whether you choose to buy genuine or aftermarket parts from us,
-                  both come with a hassle-free warranty policy. The labour is also
-                  covered under the warranty.
+                  We provide a 6 month/5,000 KM warranty with all electrical repairs. Whether you choose to buy genuine or aftermarket parts from us, both come with a hassle-free warranty policy. The labour is also covered under the warranty.
                 </p>
               </div>
             </div>
