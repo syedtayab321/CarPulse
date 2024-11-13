@@ -15,7 +15,7 @@ function ServiceDetailsPage1() {
       }
   }
   return (
-    <div className="container my-5">
+    <div className="detail-container my-5">
       <div className="top-bar py-2 text-center text-white">
         <h3>Service Details</h3>
       </div>
@@ -70,7 +70,7 @@ function ServiceDetailsPage1() {
                 <span className="discounted-price">349 AED</span>
               </div>
             </div>
-          </div>
+            </div>
           <div className="discount-box p-3 mt-4 position-relative">
             <h5>GET FREE OIL AND AED 150 OFF WHEN YOU BOOK TODAY</h5>
             <h2>NOW 349 AED</h2>
@@ -91,7 +91,7 @@ function ServiceDetailsPage1() {
         </div>
 
         {/* Callback Request Button */}
-        <button className="callback-request-btn">Request a Callback</button>
+        {/*<button className="callback-request-btn">Request a Callback</button>*/}
       </div>
     </div>
   );

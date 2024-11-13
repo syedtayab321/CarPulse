@@ -10,7 +10,7 @@ const RequestQuote = () => {
       <p className="text-center">Need a car service, a car repair, or general body work? Get a quote now.</p>
 
       <Row className="justify-content-center mt-4">
-        <Col md={7}>
+        <Col xs={12} md={7} className="mb-4 mb-md-0">
           <Form>
             <Form.Group controlId="carMake" className="mb-3">
               <Form.Select>
@@ -25,11 +25,11 @@ const RequestQuote = () => {
             <Form.Group controlId="carModel" className="mb-3">
               <Form.Select>
                 <option>Select Car Model</option>
-                  <option>Car Model 1</option>
-                  <option>Car Model 2</option>
-                  <option>Car Model 3</option>
-                  <option>Car Model 4</option>
-                  <option>Car Model 5</option>
+                <option>Car Model 1</option>
+                <option>Car Model 2</option>
+                <option>Car Model 3</option>
+                <option>Car Model 4</option>
+                <option>Car Model 5</option>
               </Form.Select>
             </Form.Group>
 
@@ -63,15 +63,15 @@ const RequestQuote = () => {
           </Form>
         </Col>
 
-        <Col md={4} className="info-box ms-md-4 mt-4 mt-md-0">
-          <div className="help-box p-3">
+        <Col xs={12} md={4} className="info-box ms-md-4 mt-4 mt-md-0">
+          <div className="help-box p-3 text-center text-md-start">
             <h4 className="text-success"><span role="img" aria-label="car trouble">😟</span> Car Trouble?</h4>
             <p>Don't worry, we got you!</p>
             <Button variant="success" className="w-100 my-2">Talk To Our Expert</Button>
             <h3 className="text-success">(04) 703 8999</h3>
           </div>
 
-          <div className="promo-box p-3 mt-3">
+          <div className="promo-box p-3 mt-3 text-center text-md-start">
             <h5><span className="text-danger">GET 10% OFF</span> YOUR FIRST BOOKING</h5>
             <ol className="list-unstyled">
               <li>1. Download our app</li>

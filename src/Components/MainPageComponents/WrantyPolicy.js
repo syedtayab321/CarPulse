@@ -30,7 +30,7 @@ const WarrantyPolicy = () => {
 
         <Tab.Content>
           <Tab.Pane eventKey="service">
-            <div className="policy-details d-flex justify-content-between align-items-center p-4">
+            <div className="policy-details  p-4">
               <div className="duration">
                 <h1 className="text-success">12 MONTHS</h1>
                 <h3 className="text-center">OR</h3>

@@ -25,7 +25,7 @@ const ServiceDetailsPage2 = () => {
           </Nav.Item>
         </Nav>
 
-        <Tab.Content className="text-left mt-4">
+        <Tab.Content className="text-left">
           <Tab.Pane eventKey="youBook">
             <Row>
               <Col md={6}>

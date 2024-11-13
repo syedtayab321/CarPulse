@@ -1,9 +1,18 @@
+.serviceDetailsMain{
+  width: 100%;
+}
 .top-bar {
   background-color: purple;
   border-radius: 20px;
   margin-bottom: 10px;
+  width: 100%;
 }
-
+.detail-container{
+  width: 100%;
+}
+.detail-container .row{
+  width: 100%;
+}
 .service-box {
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -106,4 +115,18 @@
   writing-mode: vertical-lr;
   font-weight: bold;
   width: 150px;
+}
+
+@media (max-width: 1244px){
+       .discount-box {
+         width: 100%;
+         background-color: purple;
+         color: white;
+         text-align: center;
+         border-radius: 8px;
+         position: relative;
+         top: 6px;
+         left: 0;
+         height: 269px;
+       }
 }

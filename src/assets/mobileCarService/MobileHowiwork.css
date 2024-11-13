@@ -39,3 +39,19 @@
   color: #555;
   font-size: 14px;
 }
+
+@media (max-width: 670px) {
+  .mobile-how-it-works .steps {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+  .mobile-how-it-works .steps .step{
+    width: 80%;
+  }
+   .mobile-how-it-works .steps .step img{
+     width: 100%;
+     height: 200px;
+   }
+}

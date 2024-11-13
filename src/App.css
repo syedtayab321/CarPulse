@@ -16,3 +16,9 @@
     align-items: center;
     justify-content: center;
   }
+body{
+    width: 100%;
+}
+.custom-navbar .navbar-toggler{
+    background: white;
+}

@@ -1,3 +1,7 @@
+.warranty-policy {
+  width: 100%!important;
+}
+
 .warranty-policy h2 {
   font-weight: 700;
   width: 100%;
@@ -23,6 +27,10 @@
 .warranty-policy .policy-details {
   background-color: #f4f4f4;
   border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
 }
 
 .warranty-policy .duration h1 {
@@ -51,4 +59,10 @@
 .warranty-policy .details p {
   font-size: 16px;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .warranty-policy .policy-details{
+      flex-direction: column;
+    }
 }

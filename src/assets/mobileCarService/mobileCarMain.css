@@ -22,7 +22,6 @@
 }
 
 .mobile-car-service .service-image img {
-  width: 400px;
   height: 300px;
 }
 
@@ -47,4 +46,15 @@
 .mobile-car-service .call-us a {
   color: purple;
   text-decoration: none;
+}
+
+@media (max-width: 918px) {
+   .mobile-car-service{
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+   }
+  .mobile-car-service img{
+    width: 100%;
+  }
 }

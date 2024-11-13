@@ -7,9 +7,11 @@ import WrantyPolicy from "../Components/MainPageComponents/WrantyPolicy";
 function ServiceDetails() {
   return (
      <>
-        <ServiceDetailsPage1/>
-        <ServiceDetailsPage2/>
-        <WrantyPolicy/>
+       <div className='serviceDetailsMain'>
+           <ServiceDetailsPage1/>
+           <ServiceDetailsPage2/>
+           <WrantyPolicy/>
+       </div>
      </>
   );
 }

@@ -1,12 +1,14 @@
 .footer-section {
     background-color: #333;
     color: #fff;
-    padding-top: 2rem;
+    padding: 2rem 1rem;
+    width: 100% !important;
 }
 
 .footer-section h5 {
     font-weight: bold;
     color: #fff;
+    font-size: 1.2rem; /* Slightly smaller font for mobile */
 }
 
 .footer-section p, .footer-section a {
@@ -22,7 +24,7 @@
 .footer-section .social-icons a {
     font-size: 1.2rem;
     color: #ccc;
-    margin-right: 15px;
+    margin-right: 10px;
     transition: color 0.3s ease;
 }
 
@@ -33,4 +35,46 @@
 .footer-bottom {
     background-color: #222;
     padding: 1rem;
+    text-align: center; /* Center-aligns text for smaller screens */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .footer-section h5 {
+        font-size: 1rem; /* Smaller font for smaller screens */
+    }
+
+    .footer-section p, .footer-section a {
+        font-size: 0.8rem; /* Adjusts text size for better readability on small screens */
+    }
+
+    .footer-section .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-section .social-icons a {
+        font-size: 1rem; /* Slightly smaller icons for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section .social-icons {
+        justify-content: center;
+        gap: 8px; /* Reduces gap for very small screens */
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem; /* Smaller font size for very small screens */
+    }
 }

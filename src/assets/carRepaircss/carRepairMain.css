@@ -8,13 +8,10 @@
   color: #666;
 }
 
-.request-quote .form-control {
-  border-radius: 8px;
-  box-shadow: none;
-}
-
+.request-quote .form-control,
 .request-quote .form-select {
   border-radius: 8px;
+  box-shadow: none;
 }
 
 .request-quote .info-box {
@@ -28,11 +25,13 @@
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
+  text-align: center; /* Center align on small screens */
 }
 
 .request-quote .help-box h4,
 .request-quote .help-box h3 {
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 .request-quote .promo-box h5 {
@@ -50,4 +49,30 @@
   max-width: 80%;
   display: block;
   margin: 0 auto;
+}
+
+/* Responsive styling */
+@media (max-width: 767px) {
+  .request-quote h2 {
+    font-size: 1.5em;
+  }
+
+  .request-quote p {
+    font-size: 0.9em;
+  }
+
+  .request-quote .info-box,
+  .request-quote .help-box,
+  .request-quote .promo-box {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .request-quote .promo-box h5 {
+    font-size: 1em;
+  }
+
+  .request-quote .img-fluid {
+    max-width: 60%;
+  }
 }
