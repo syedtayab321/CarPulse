@@ -55,7 +55,7 @@ const carServicesData = [
 
 const CarServices = () => {
     return (
-        <div className="services-section container py-5">
+        <div className="mservices-section py-5">
             <h2 className="text-center mb-5">Our Car Services</h2>
             <div className="row">
                 {carServicesData.map((service, index) => (

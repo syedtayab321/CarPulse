@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button, Grid, Card, CardContent, CardMedia } from '@mui/material';
-import { Link } from 'react-router-dom'; // Import Link from React Router
+import { Link } from 'react-router-dom';
 import images1 from './../../assets/images/card1.jpg';
 import images2 from './../../assets/images/card2.jpg';
 import images3 from './../../assets/images/card3.jpg';
@@ -10,43 +10,43 @@ const services = [
     title: 'Car Service',
     description: 'High-quality car servicing',
     image: images1,
-    color: '#FFE0B2',
+    color: 'purple',
     link: '/serviceDetails'
   },
   {
     title: 'Mobile Service',
     description: 'Quick mobile repair',
     image: images2,
-    color: '#E0F7FA',
+    color: 'purple',
     link: '/serviceDetails'
   },
   {
     title: 'Car Repair',
     description: 'Affordable car repairs',
     image: images3,
-    color: '#FFECB3',
-    link: '/car-repair'
+    color: 'purple',
+    link: '/serviceDetails'
   },
   {
-    title: 'Plumbing',
+    title: 'Road Side Assitant',
     description: 'Efficient plumbing solutions',
     image: images3,
-    color: '#C8E6C9',
-    link: '/plumbing'
+    color: 'purple',
+    link: '/serviceDetails'
   },
   {
-    title: 'Electrical Work',
+    title: 'Car Renewal',
     description: 'Safe electrical installations',
     image: images1,
-    color: '#B3E5FC',
-    link: '/electrical-work'
+    color: 'purple',
+    link: '/serviceDetails'
   },
   {
-    title: 'Pest Control',
+    title: 'Service Contract',
     description: 'Comprehensive pest control',
     image: images2,
-    color: '#F0F4C3',
-    link: '/pest-control'
+    color: 'purple',
+    link: '/serviceDetails'
   },
 ];
 
@@ -78,9 +78,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Box sx={{ padding: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+    <Box sx={{ padding: 4, display: 'flex' ,flexDirection: { xs: 'column', md: 'row' } }}>
 
-      {/* Left Section */}
       <Box sx={{ flex: 1, mb: { xs: 4, md: 0 }, textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ textAlign: 'center' }}>
           Welcome to Our Services
@@ -103,10 +102,6 @@ const HomePage = () => {
             </Box>
           ))}
         </Box>
-
-        <Button variant="contained" color="primary" size="large" sx={{ display: 'block', mx: 'auto' }}>
-          Book Now
-        </Button>
       </Box>
 
       {/* Right Section - Services */}
@@ -131,11 +126,11 @@ const HomePage = () => {
                     image={service.image}
                     alt={service.title}
                   />
-                  <CardContent sx={{ padding: 1 }}>
+                  <CardContent sx={{ padding: 1 , color:'white'}}>
                     <Typography variant="subtitle1" fontWeight="bold">
                       {service.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" sx={{ fontSize: '12px' }}>
+                    <Typography variant="body2" color="textSecondary" sx={{ fontSize: '12px', color:'white' }}>
                       {service.description}
                     </Typography>
                   </CardContent>

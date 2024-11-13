@@ -1,18 +1,16 @@
-.services-section {
-    background-color: #100228;
+.mservices-section {
+    background-color: purple;
     padding: 2rem;
     border-radius: 10px;
-    width: 95%;
+    width: 100%;
 }
 
-.services-section h2 {
+.mservices-section h2 {
     font-size: 2rem;
     font-weight: bold;
     color: #ffffff;
     margin-bottom: 1.5rem;
 }
-
-/* Service card styling */
 .service-card {
     background-color: #ffffff;
     border-radius: 10px;
@@ -24,7 +22,7 @@
     align-items: center;
     text-align: center;
     padding: 1rem;
-    height: 220px;
+    height: 400px!important;
 }
 
 .service-card:hover {

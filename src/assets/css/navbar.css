@@ -1,5 +1,5 @@
 .custom-navbar {
-    background-color: transparent;
+    background-color: purple;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     transition: all 0.3s ease;
@@ -22,14 +22,14 @@
 }
 
 .custom-navbar .navbar-title {
-    color: #007bff;
+    color: white;
     font-weight: bold;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 .custom-navbar .navbar-title:hover {
-    color: #0056b3;
+    color: white;
 }
 
 .custom-navbar .navbar-toggler {
@@ -38,7 +38,7 @@
 
 .custom-navbar .navbar-nav .nav-link {
     font-size: 1.1rem;
-    color: #333;
+    color: white;
     margin-right: 1rem;
     position: relative;
     transition: color 0.3s ease;
@@ -95,7 +95,9 @@
 .custom-navbar .navbar-toggler-icon {
     background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 30 30%22%3E%3Cpath stroke%3D%22rgba%288, 8, 8, 0.7%29%22 stroke-width%3D%222%22 d%3D%22M4 7h22M4 15h22M4 23h22%22/%3E%3C/svg%3E');
 }
-
+.textt{
+    color: greenyellow;
+}
 @media (max-width: 991px) {
     .custom-navbar .navbar-nav .nav-link {
         margin-right: 0;

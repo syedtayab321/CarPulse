@@ -1,6 +1,18 @@
-App {
+*{
   margin: 0;
   font-family: 'Poppins';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color:limegreen;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

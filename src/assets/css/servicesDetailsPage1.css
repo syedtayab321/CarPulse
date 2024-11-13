@@ -1,0 +1,110 @@
+/* servicesDetailsPage1.css */
+
+/* Top Bar Styling */
+.top-bar {
+  background-color: purple;
+}
+
+/* Service Box Styling */
+.service-box {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Most Popular Tag */
+.most-popular-tag {
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Included and Not Included List Styling */
+.included-item, .not-included-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Checkbox Styling */
+.included-item input, .not-included-item input {
+  margin-right: 10px;
+}
+
+/* Price Section */
+.price-section .original-price {
+  font-size: 24px;
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 15px;
+}
+
+.price-section .discounted-price {
+  font-size: 30px;
+  color: #333;
+}
+
+/* Discount Box Styling */
+.discount-box {
+  background-color: #00aa00;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Countdown Timer */
+.countdown-unit {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 60px;
+}
+
+.countdown-number {
+  font-size: 24px;
+}
+
+.countdown-label {
+  font-size: 12px;
+}
+
+/* Book Now Button with Car Icon */
+.book-now-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Car Icon Animation */
+@keyframes moveCar {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.car-icon.animate-car {
+  animation: moveCar 0.5s infinite;
+}
+
+/* Callback Request Button */
+.callback-request-btn {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  writing-mode: vertical-lr;
+  font-weight: bold;
+  width: 150px;
+}

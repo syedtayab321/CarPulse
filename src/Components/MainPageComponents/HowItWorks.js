@@ -6,7 +6,7 @@ import './../../assets/css/howwework.css';
 const HowWeWork = () => {
   return (
     <Container fluid className="how-we-work-container py-5">
-      <h2 className="text-center text-primary font-weight-bold mb-4">How Our Car Services Work</h2>
+      <h2 className="text-center  font-weight-bold mb-4">How Our Car Services Work</h2>
 
       <Row className="justify-content-center">
         {/* Step 1 */}
@@ -73,12 +73,6 @@ const HowWeWork = () => {
           </Card>
         </Col>
       </Row>
-
-      {/* Call to Action */}
-      <div className="text-center mt-5">
-        <h3 className="text-dark">Ready to Give Your Car the Best Care?</h3>
-        <Button variant="primary" size="lg" href="#contact" className="cta-button">Contact Us</Button>
-      </div>
     </Container>
   );
 };

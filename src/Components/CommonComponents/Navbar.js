@@ -1,18 +1,37 @@
-import React from 'react';
-import logo from '../../assets/images/card1.jpg';
+import React, { useState } from 'react';
+import logo from '../../assets/images/carpulseLogo.jpeg';
 import '../../assets/css/navbar.css';
-import { Link,useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../FirebaseConfig';
+import { Modal, Button } from 'react-bootstrap';
+import {faPerson} from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
   const navigate = useNavigate();
+  const userData = localStorage.getItem('user');
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleClick = (value) => {
-    if (value === 'login'){
+    if (value === 'login') {
       navigate('/login');
-    }else if (value === 'signup'){
+    } else if (value === 'signup') {
       navigate('/signup');
     }
-  }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem('user');
+      setShowLogoutConfirm(false); // Close the modal
+      navigate('/');
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
+
+  const toggleDropdown = () => setShowDropdown(!showDropdown);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
@@ -41,21 +60,57 @@ const Navbar = () => {
               <Link className="nav-link" to="/aboutus">About</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/services">services</Link>
+              <Link className="nav-link" to="/services">Services</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contactus">Contact us</Link>
+              <Link className="nav-link" to="/contactus">Contact Us</Link>
             </li>
-            <li className="btn">
-              <button className="btn btn-success" onClick={()=>handleClick('login')} >Login</button>
-            </li>
-
-            <li className="btn">
-              <button className="btn btn-outline-dark" onClick={()=>handleClick('signup')}>Create Account</button>
-            </li>
+            {userData === null ? (
+              <>
+                <li className="btn">
+                  <button className="btn btn-success" onClick={() => handleClick('login')}>Login</button>
+                </li>
+                <li className="btn">
+                  <button className="btn btn-primary" onClick={() => handleClick('signup')}>Create Account</button>
+                </li>
+              </>
+            ) : (
+              <div className="dropdown">
+                <button
+                  className="btn btn-primary"
+                  onClick={toggleDropdown}
+                  aria-expanded="false"
+                >
+                  <i className="fas fa-user-circle"></i> {userData}
+                </button>
+                {showDropdown && (
+                  <div className="dropdown-menu show" style={{ position: 'absolute', right: 0 }}>
+                    <button className="dropdown-item" onClick={() => setShowLogoutConfirm(true)}>
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
           </ul>
         </div>
       </div>
+
+      {/* Logout Confirmation Modal */}
+      <Modal show={showLogoutConfirm} onHide={() => setShowLogoutConfirm(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Logout</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to logout?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowLogoutConfirm(false)}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={handleLogout}>
+            Logout
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </nav>
   );
 };

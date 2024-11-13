@@ -10,7 +10,7 @@ const AboutUsPage = () => {
       <Box
         sx={{
           height: '50vh',
-          background: `gray`,
+          background: `purple`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
@@ -51,94 +51,6 @@ const AboutUsPage = () => {
           </Grid>
         </Grid>
 
-        {/* Team Section */}
-        <Typography variant="h4" align="center" gutterBottom sx={{ color: '#2c3e50', fontWeight: 'bold', marginTop: '4rem' }}>
-          Meet Our Team
-        </Typography>
-
-        <Grid container spacing={4} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ borderRadius: '12px', boxShadow: 6, textAlign: 'center' }}>
-              <CardMedia
-                component="img"
-                alt="Team Member 1"
-                height="250"
-                image={teamImage1}
-                sx={{
-                  borderTopLeftRadius: '12px',
-                  borderTopRightRadius: '12px',
-                  objectFit: 'cover',
-                }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                  John Doe
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  CEO & Founder
-                </Typography>
-                <Typography variant="body1" paragraph sx={{ marginTop: '1rem' }}>
-                  John is the visionary behind the company, with over 20 years of experience in the industry.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ borderRadius: '12px', boxShadow: 6, textAlign: 'center' }}>
-              <CardMedia
-                component="img"
-                alt="Team Member 2"
-                height="250"
-                image={teamImage2}
-                sx={{
-                  borderTopLeftRadius: '12px',
-                  borderTopRightRadius: '12px',
-                  objectFit: 'cover',
-                }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                  Jane Smith
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Chief Operating Officer
-                </Typography>
-                <Typography variant="body1" paragraph sx={{ marginTop: '1rem' }}>
-                  Jane ensures smooth operations and is instrumental in overseeing the day-to-day activities of the company.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-            <Card sx={{ borderRadius: '12px', boxShadow: 6, textAlign: 'center' }}>
-              <CardMedia
-                component="img"
-                alt="Team Member 3"
-                height="250"
-                image={teamImage3}
-                sx={{
-                  borderTopLeftRadius: '12px',
-                  borderTopRightRadius: '12px',
-                  objectFit: 'cover',
-                }}
-              />
-              <CardContent>
-                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-                  Michael Lee
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  Chief Technology Officer
-                </Typography>
-                <Typography variant="body1" paragraph sx={{ marginTop: '1rem' }}>
-                  Michael leads the technology division and drives the innovation behind our products and services.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-
         {/* Call to Action Section */}
         <Box sx={{ textAlign: 'center', marginTop: '4rem' }}>
           <Typography variant="h4" gutterBottom sx={{ color: '#2c3e50', fontWeight: 'bold' }}>
@@ -147,9 +59,6 @@ const AboutUsPage = () => {
           <Typography variant="body1" paragraph>
             We’re always looking for talented individuals to join our team and help us make an impact in the industry.
           </Typography>
-          <Button variant="contained" color="primary" size="large" href="#contact" sx={{ borderRadius: '8px' }}>
-            Contact Us Today
-          </Button>
         </Box>
       </Container>
     </div>

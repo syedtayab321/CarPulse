@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import { signUp } from '../../BackendFunctions/Auth';
+import {Button, Form, Container, Row, Col, Spinner} from 'react-bootstrap';
 import './../../assets/css/SignUpPage.css';
+import { Link } from "react-router-dom";
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -9,26 +11,32 @@ const SignupPage = () => {
     location: '',
     password: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Add signup logic here
+    setLoading(true);
+    const { name, email, location, password } = formData;
+    const result = await signUp(name, email, password, location);
+
+    setLoading(false);
+    if (result.success) {
+      alert('Account created successfully!');
+    } else {
+      alert(`Error creating account: ${result.error}`);
+    }
   };
 
   return (
     <Container fluid className="signup-container">
       <Row className="signup-content">
-        {/* Left Side Image */}
         <Col md={6} className="signup-image d-none d-md-block">
-          {/* Image can be added here as a background or as an <img> */}
         </Col>
 
-        {/* Right Side Form */}
         <Col md={6} className="signup-form">
           <h2 className="text-center mb-4">Create Account</h2>
           <Form onSubmit={handleSubmit}>
@@ -80,9 +88,19 @@ const SignupPage = () => {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="w-100">
-              Sign Up
+            <Button type="submit" className="sign-in-btn w-100" disabled={loading}>
+              {loading ? (
+                <Spinner animation="border" role="status" size="sm">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              ) : (
+                'Create Account'
+              )}
             </Button>
+
+            <Link to='/' type="button" className="google-sign-in-btn mt-3">
+              Back to Home Page
+            </Link>
           </Form>
         </Col>
       </Row>

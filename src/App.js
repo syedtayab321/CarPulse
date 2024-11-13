@@ -6,16 +6,18 @@ import Footer from "./Components/CommonComponents/footer";
 import MajorServicePage from "./Components/MainPageComponents/MajorServicePage";
 import AboutUsPage from "./Pages/Aboutus";
 import ServicesDetailsPage from "./Pages/ServiceDetailsPage";
-import WarrantyPolicy from "./Pages/WrantyPolicy";
-import FAQs from "./Pages/Faqs";
 import OfferDetails from "./Pages/offerDetails";
 import ContactUs from "./Pages/ContactUs";
 import LoginPage from "./Components/CommonComponents/Login";
 import SignupPage from "./Components/CommonComponents/SignUpScreen";
+import './App.css'
+import FloatingWhatsAppButton from "./Components/CommonComponents/floatingActionButton";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
+      <FloatingWhatsAppButton/>
       <Navbar/>
       <Routes>
           <Route path='/' element={<MainPage/>} />
@@ -27,8 +29,6 @@ function App() {
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/signup' element={<SignupPage/>} />
       </Routes>
-        <WarrantyPolicy/>
-        <FAQs/>
         <Footer/>
     </>
   );
