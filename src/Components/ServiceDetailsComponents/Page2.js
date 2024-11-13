@@ -106,10 +106,6 @@ const ServiceDetailsPage2 = () => {
         </Tab.Content>
       </Tab.Container>
 
-      {/* Right side callback button */}
-      <div className="callback-button">
-        <Button variant="danger">Request a Callback</Button>
-      </div>
     </Container>
   );
 };

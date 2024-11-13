@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../FirebaseConfig';
 import { Modal, Button } from 'react-bootstrap';
-import {faPerson} from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
   const navigate = useNavigate();
   const userData = localStorage.getItem('user');
@@ -64,6 +63,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/contactus">Contact Us</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/battries">Batteries Section</Link>
             </li>
             {userData === null ? (
               <>

@@ -1,54 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
-import images1 from './../../assets/images/card1.jpg';
-import images2 from './../../assets/images/card2.jpg';
-import images3 from './../../assets/images/card3.jpg';
-
-const services = [
-  {
-    title: 'Car Service',
-    description: 'High-quality car servicing',
-    image: images1,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-  {
-    title: 'Mobile Service',
-    description: 'Quick mobile repair',
-    image: images2,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-  {
-    title: 'Car Repair',
-    description: 'Affordable car repairs',
-    image: images3,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-  {
-    title: 'Road Side Assitant',
-    description: 'Efficient plumbing solutions',
-    image: images3,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-  {
-    title: 'Car Renewal',
-    description: 'Safe electrical installations',
-    image: images1,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-  {
-    title: 'Service Contract',
-    description: 'Comprehensive pest control',
-    image: images2,
-    color: 'purple',
-    link: '/serviceDetails'
-  },
-];
+import { fetchServicesData } from '../../BackendFunctions/FetchServices';
+import images1 from './../../assets/images/card2.jpg';
 
 const HomePage = () => {
   const calculateTimeLeft = () => {
@@ -67,9 +21,16 @@ const HomePage = () => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [services, setServices] = useState([]);
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
   useEffect(() => {
+    const loadServicesData = async () => {
+      const data = await fetchServicesData();
+      setServices(data);
+    };
+    loadServicesData();
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
@@ -78,8 +39,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Box sx={{ padding: 4, display: 'flex' ,flexDirection: { xs: 'column', md: 'row' } }}>
-
+    <Box sx={{ padding: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+      {/* Left Section - Welcome and Countdown */}
       <Box sx={{ flex: 1, mb: { xs: 4, md: 0 }, textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ textAlign: 'center' }}>
           Welcome to Our Services
@@ -91,7 +52,7 @@ const HomePage = () => {
           We provide a range of quality services tailored to meet your needs. Experience the best with us.
         </Typography>
 
-        {/* Countdown */}
+        {/* Countdown Timer */}
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mb: 3 }}>
           {Object.keys(timeLeft).map((unit) => (
             <Box key={unit} sx={{ textAlign: 'center', border: '1px solid', borderRadius: 1, padding: 1 }}>
@@ -104,7 +65,7 @@ const HomePage = () => {
         </Box>
       </Box>
 
-      {/* Right Section - Services */}
+      {/* Right Section - Services Cards */}
       <Box sx={{ flex: 1 }}>
         <Grid container spacing={3}>
           {services.map((service, index) => (
@@ -123,14 +84,14 @@ const HomePage = () => {
                   <CardMedia
                     component="img"
                     height="120"
-                    image={service.image}
+                    image={service.image || images1}
                     alt={service.title}
                   />
-                  <CardContent sx={{ padding: 1 , color:'white'}}>
+                  <CardContent sx={{ padding: 1, color: 'white' }}>
                     <Typography variant="subtitle1" fontWeight="bold">
                       {service.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" sx={{ fontSize: '12px', color:'white' }}>
+                    <Typography variant="body2" color="textSecondary" sx={{ fontSize: '12px', color: 'white' }}>
                       {service.description}
                     </Typography>
                   </CardContent>

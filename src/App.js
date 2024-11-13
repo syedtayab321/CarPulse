@@ -13,6 +13,7 @@ import SignupPage from "./Components/CommonComponents/SignUpScreen";
 import './App.css'
 import FloatingWhatsAppButton from "./Components/CommonComponents/floatingActionButton";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import BattriesMainPage from "./BattriesPortal/BattriesMainPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Navbar/>
       <Routes>
           <Route path='/' element={<MainPage/>} />
+          <Route path='/battries' element={<BattriesMainPage/>} />
           <Route path='/aboutus' element={<AboutUsPage/>} />
           <Route path='/services' element={<MajorServicePage/>} />
           <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />

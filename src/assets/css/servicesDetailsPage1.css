@@ -1,18 +1,15 @@
-/* servicesDetailsPage1.css */
-
-/* Top Bar Styling */
 .top-bar {
   background-color: purple;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
-/* Service Box Styling */
 .service-box {
   background-color: #f8f9fa;
   border-radius: 8px;
   position: relative;
 }
 
-/* Most Popular Tag */
 .most-popular-tag {
   position: absolute;
   top: -20px;
@@ -23,19 +20,16 @@
   border-radius: 8px;
 }
 
-/* Included and Not Included List Styling */
 .included-item, .not-included-item {
   display: flex;
   align-items: center;
   margin-bottom: 8px;
 }
 
-/* Checkbox Styling */
 .included-item input, .not-included-item input {
   margin-right: 10px;
 }
 
-/* Price Section */
 .price-section .original-price {
   font-size: 24px;
   text-decoration: line-through;
@@ -48,36 +42,41 @@
   color: #333;
 }
 
-/* Discount Box Styling */
 .discount-box {
-  background-color: #00aa00;
+  width: 300px;
+  background-color: purple;
   color: white;
   text-align: center;
   border-radius: 8px;
+  position: relative;
+  bottom:270px;
+  left: 530px;
+  height: 270px;
 }
 
-/* Countdown Timer */
+
 .countdown-unit {
   background-color: white;
   color: black;
   border-radius: 5px;
   padding: 10px;
-  width: 60px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .countdown-number {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .countdown-label {
-  font-size: 12px;
+  font-size: 10px;
 }
 
-/* Book Now Button with Car Icon */
 .book-now-btn {
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 10px;
   display: flex;
   align-items: center;
   gap: 8px;

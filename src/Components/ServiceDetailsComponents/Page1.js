@@ -74,8 +74,6 @@ function ServiceDetailsPage1() {
                 </div>
               ))}
             </div>
-
-            {/* Book Now Button with Car Icon */}
             <button className="btn btn-danger book-now-btn">
               BOOK NOW <FaCar className="car-icon animate-car" />
             </button>

@@ -1,0 +1,39 @@
+.battery-services-section {
+  padding: 4rem 2rem;
+  background-color: #f0f0f5;
+  text-align: center;
+}
+
+.battery-services-section .services-title {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.battery-services-section .service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.battery-services-section .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.battery-services-section .service-icon {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.battery-services-section .service-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.battery-services-section .service-description {
+  color: #666;
+}

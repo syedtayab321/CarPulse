@@ -1,8 +1,5 @@
 import React from 'react';
-import { Container, Grid, Typography, Box, Button, Card, CardContent, CardMedia } from '@mui/material';
-import teamImage1 from '../assets/images/card1.jpg';
-import teamImage2 from '../assets/images/card2.jpg';
-import teamImage3 from '../assets/images/card3.jpg';
+import { Container, Grid, Typography, Box, } from '@mui/material';
 
 const AboutUsPage = () => {
   return (
