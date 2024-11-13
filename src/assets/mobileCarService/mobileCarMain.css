@@ -1,0 +1,50 @@
+.mobile-car-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+}
+
+.mobile-car-service .service-content {
+  max-width: 400px;
+  text-align: left;
+}
+
+.mobile-car-service .service-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mobile-car-service .service-content p {
+  color: #555;
+}
+
+.mobile-car-service .service-image img {
+  width: 400px;
+  height: 300px;
+}
+
+.mobile-car-service .service-image img {
+  max-width: 400px;
+}
+
+.mobile-car-service .btn-success {
+  background-color: purple;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.mobile-car-service .call-us {
+  margin-top: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+.mobile-car-service .call-us a {
+  color: purple;
+  text-decoration: none;
+}
