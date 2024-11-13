@@ -2,7 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { fetchServicesData } from '../../BackendFunctions/FetchServices';
-import images1 from './../../assets/images/card2.jpg';
+import images1 from './../../assets/images/card1.jpg';
+import images2 from './../../assets/images/card2.jpg';
+import images3 from './../../assets/images/card3.jpg';
+import images4 from './../../assets/images/card3.jpg';
+
+const dummyData = [
+  { description: 'High-quality battery sales', image: images1, link: '/serviceDetails', color: '#4caf50' },
+  { description: 'Purchase old batteries at best prices', image: images2, link: '/serviceDetails', color: '#ff9800' },
+  { description: 'Expert battery installation', image: images3, link: '/serviceDetails', color: '#2196f3' },
+  { description: 'Environment-friendly recycling', image: images4, link: '/serviceDetails', color: '#f44336' },
+    { description: 'Purchase old batteries at best prices', image: images2, link: '/serviceDetails', color: '#ff9800' },
+  { description: 'Expert battery installation', image: images3, link: '/carRepair', color: '#2196f3' },
+  { description: 'Environment-friendly recycling', image: images4, link: '/serviceDetails', color: '#f44336' },
+];
 
 const HomePage = () => {
   const calculateTimeLeft = () => {
@@ -26,9 +39,13 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadServicesData = async () => {
-      const data = await fetchServicesData();
-      setServices(data);
-    };
+        const data = await fetchServicesData();  // Assuming it returns an array of objects like [{ title: 'Service 1' }]
+        const combinedData = data.map((item, index) => ({
+          title: item.title,  // Directly accessing the title property if data is an array of objects
+          ...dummyData[index % dummyData.length],
+        }));
+        setServices(combinedData);
+      };
     loadServicesData();
 
     const timer = setInterval(() => {
@@ -84,7 +101,7 @@ const HomePage = () => {
                   <CardMedia
                     component="img"
                     height="120"
-                    image={service.image || images1}
+                    image={service.image}
                     alt={service.title}
                   />
                   <CardContent sx={{ padding: 1, color: 'white' }}>

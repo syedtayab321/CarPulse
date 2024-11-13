@@ -1,0 +1,53 @@
+.request-quote h2 {
+  font-weight: 700;
+  font-size: 1.8em;
+}
+
+.request-quote p {
+  font-size: 1em;
+  color: #666;
+}
+
+.request-quote .form-control {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.request-quote .form-select {
+  border-radius: 8px;
+}
+
+.request-quote .info-box {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.request-quote .help-box,
+.request-quote .promo-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.request-quote .help-box h4,
+.request-quote .help-box h3 {
+  font-weight: bold;
+}
+
+.request-quote .promo-box h5 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #333;
+}
+
+.request-quote .list-unstyled {
+  padding-left: 1em;
+  color: #666;
+}
+
+.request-quote .img-fluid {
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+}

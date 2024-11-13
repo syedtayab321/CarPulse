@@ -1,0 +1,76 @@
+.car-services h2 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.service-icon {
+  font-size: 2.5em;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.icon-service {
+  background-image: url('../../assets/carServiceIcons/car-service.png');
+}
+
+.icon-recovery {
+  background-image: url('../../assets/carServiceIcons/recovery.svg');
+}
+
+.icon-detailing {
+  background-image: url('../../assets/carServiceIcons/cleaning-service.svg');
+}
+
+.icon-ac-repair {
+  background-image: url('../../assets/carServiceIcons/ac-service.png');
+}
+
+.icon-oil-change {
+  background-image: url('../../assets/carServiceIcons/oilchange.jpeg');
+}
+
+.icon-wheel-alignment {
+  background-image: url('../../assets/carServiceIcons/wheel-alignment.jpg');
+}
+
+.icon-maintenance {
+  background-image: url('../../assets/carServiceIcons/maintainance.png');
+}
+
+.icon-ac-refill {
+  background-image: url('../../assets/carServiceIcons/oilchange.jpeg');
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.service-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #28a745;
+}
+
+.service-description {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.view-all-btn {
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.view-all-btn:hover {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #28a745;
+}

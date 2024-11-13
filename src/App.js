@@ -14,6 +14,7 @@ import './App.css'
 import FloatingWhatsAppButton from "./Components/CommonComponents/floatingActionButton";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BattriesMainPage from "./BattriesPortal/BattriesMainPage";
+import CarRepair from "./Pages/CarRepair";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path='/contactus' element={<ContactUs/>} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/signup' element={<SignupPage/>} />
+
+          <Route path='/carRepair' element={<CarRepair/>} />
       </Routes>
         <Footer/>
     </>
