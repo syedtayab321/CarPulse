@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 
 
 const CarServices = () => {
@@ -30,9 +30,6 @@ const CarServices = () => {
           </Col>
         ))}
       </Row>
-      <div className="text-center mt-4">
-        <Button variant="outline-success" className="view-all-btn">VIEW ALL SERVICES</Button>
-      </div>
     </Container>
   );
 };

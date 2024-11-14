@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../../assets/css/footer.css';
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -18,18 +19,18 @@ const Footer = () => {
                     <div className="col-md-4">
                         <h5>Quick Links</h5>
                         <ul className="list-unstyled">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/services">Services</a></li>
-                            <li><a href="/warranty-policy">Warranty Policy</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/services">Services</Link></li>
+                            <li><Link to="/warranty">Warranty Policy</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-4">
                         <h5>Follow Us</h5>
                         <div className="social-icons">
-                            <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+                            <Link to="#"><FontAwesomeIcon icon={faFacebookF} /></Link>
+                            <Link to="#"><FontAwesomeIcon icon={faTwitter} /></Link>
+                            <Link to="#"><FontAwesomeIcon icon={faInstagram} /></Link>
                         </div>
                     </div>
                 </div>

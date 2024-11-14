@@ -30,7 +30,7 @@ const ServiceDetailsPage2 = () => {
             <Row>
               <Col md={6}>
                 <h5><FontAwesomeIcon icon={faPhone} /> Phone</h5>
-                <p>Our call center operates from 8 AM to 9 PM from Monday to Saturday, and 10 AM - 8 PM on Sunday. Call us at <a href="tel:8002665464" className="phone-link">8002665464</a>.</p>
+                <p>Our call center operates from 8 AM to 9 PM from Monday to Saturday, and 10 AM - 8 PM on Sunday. Call us at <a href="tel:+971 50 432 1395" className="phone-link">+971 50 432 1395</a>.</p>
                 <h5><FontAwesomeIcon icon={faGlobe} /> Online</h5>
                 <p>Make a booking online through our website.</p>
                 <h5><FontAwesomeIcon icon={faMobileAlt} /> Download the App</h5>
@@ -59,9 +59,11 @@ const ServiceDetailsPage2 = () => {
             <Row>
               <Col md={6}>
                 <h5><FontAwesomeIcon icon={faTruck} /> Collection Service</h5>
-                <p>Our team will come to your location to collect your vehicle at a time that suits you.</p>
+                <p>After making the booking, our driver will arrive at a time and location of your choice. We will inspect your car and check for any faults and concerns you may have. A collection report will then be generated and sent on sms & email.</p>
                 <h5><FontAwesomeIcon icon={faCheckCircle} /> Safety First</h5>
-                <p>We ensure your vehicle is transported safely to our service center.</p>
+                <p>If you have any concerns or enquiries, please contact customer support at 8002665464.
+                  Please remove any valuable belongings as your car passes through multiple departments.
+                  All our staﬀ wear face masks, gloves, and take other necessary precautions to prevent the spread of COVID-19.</p>
               </Col>
               <Col md={6} className="video-placeholder">
                 {/* You could add a second video here if desired */}
@@ -76,9 +78,11 @@ const ServiceDetailsPage2 = () => {
             <Row>
               <Col md={6}>
                 <h5><FontAwesomeIcon icon={faWrench} /> Expert Service</h5>
-                <p>Our certified technicians provide comprehensive service and repairs, ensuring top quality.</p>
+                <p>Once the car arrives at the workshop, a service advisor is assigned and a full detailed report with images is generated again. The car is checked by the next available technician.</p>
                 <h5><FontAwesomeIcon icon={faCheckCircle} /> Quality Check</h5>
-                <p>Each vehicle undergoes a thorough quality check before it is returned to you.</p>
+                <p>After checking, the health check report is sent by sms & email.
+                    If needed, our parts advisors search for highest quality parts with the best prices in the market. A quotation is then generated and sent to you via sms & email to accept or reject. No work is carried out without your approval.
+                    Once we receive your decision, the parts are ordered and your car repair or service is initiated.</p>
               </Col>
               <Col md={6} className="video-placeholder">
                 <video className="video-background" autoPlay loop muted>
@@ -92,9 +96,11 @@ const ServiceDetailsPage2 = () => {
             <Row>
               <Col md={6}>
                 <h5><FontAwesomeIcon icon={faTruck} /> Home Delivery</h5>
-                <p>We deliver your vehicle back to your location after service is completed, ready to drive.</p>
-                <h5><FontAwesomeIcon icon={faCheckCircle} /> Satisfaction Guaranteed</h5>
-                <p>Our goal is to ensure your satisfaction with our service. You’re ready to hit the road again!</p>
+                <p>
+                  We Deliver Once the car service is complete, it goes for a quality check, and a road test. If it fails the quality check, it gets sent back to the workshop for further diagnosis.
+                  After passing the road test, the car goes for cleaning. The insides get vacuumed and the outside gets shampooed, washed, and dried.
+                  The car goes for another quality check after the cleaning. After it passes, an invoice will be generated and a link to make the online payment gets sent to you by SMS and email.
+                  Once the invoice is paid, a driver is then assigned to deliver your car back to you. The driver will carry out a final inspection with you and generate a delivery report which will be sent to you on SMS and email.</p>
               </Col>
               <Col md={6} className="video-placeholder">
                 <video className="video-background" autoPlay loop muted>

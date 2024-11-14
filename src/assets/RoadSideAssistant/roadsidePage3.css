@@ -1,5 +1,6 @@
 .roadside-assistance-3 h2 {
   font-weight: bold;
+  color: #800080!important;
 }
 .roadside-assistance-3  .services-section ul {
   padding-left: 0;
@@ -9,7 +10,7 @@
 .roadside-assistance-3  .services-section ul li {
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: #28a745;
+  color: #800080;
 }
 
 .roadside-assistance-3  .tyre-image {
@@ -21,6 +22,10 @@
   margin-top: 20px;
 }
 
+.roadside-assistance-3 .button-group .btn{
+  background-color: #800080;
+  color: white;
+}
 @media (max-width: 768px) {
   .roadside-assistance-3  .tyre-image {
     max-width: 100%;

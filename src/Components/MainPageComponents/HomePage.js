@@ -12,7 +12,7 @@ const dummyData = [
   { description: 'Purchase old batteries at best prices', image: images2, link: '/mobileCarService', color: '#ff9800' },
   { description: 'Expert battery installation', image: images3, link: '/serviceDetails', color: '#2196f3' },
   { description: 'Environment-friendly recycling', image: images4, link: '/serviceDetails', color: '#f44336' },
-    { description: 'Purchase old batteries at best prices', image: images2, link: '/serviceDetails', color: '#ff9800' },
+    { description: 'Purchase old batteries at best prices', image: images2, link: '/carRenewal', color: '#ff9800' },
   { description: 'Expert battery installation', image: images3, link: '/carRepair', color: '#2196f3' },
   { description: 'Environment-friendly recycling', image: images4, link: '/serviceDetails', color: '#f44336' },
 ];
@@ -39,9 +39,9 @@ const HomePage = () => {
 
   useEffect(() => {
     const loadServicesData = async () => {
-        const data = await fetchServicesData();  // Assuming it returns an array of objects like [{ title: 'Service 1' }]
+        const data = await fetchServicesData();
         const combinedData = data.map((item, index) => ({
-          title: item.title,  // Directly accessing the title property if data is an array of objects
+          title: item.title,
           ...dummyData[index % dummyData.length],
         }));
         setServices(combinedData);
@@ -56,7 +56,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Box sx={{ padding: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+    <>
+         <Box sx={{ padding: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       {/* Left Section - Welcome and Countdown */}
       <Box sx={{ flex: 1, mb: { xs: 4, md: 0 }, textAlign: { xs: 'center', md: 'left' } }}>
         <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ textAlign: 'center' }}>
@@ -119,6 +120,7 @@ const HomePage = () => {
         </Grid>
       </Box>
     </Box>
+    </>
   );
 };
 

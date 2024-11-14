@@ -1,0 +1,74 @@
+.carRenewal {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: #0e0e3d;
+  align-content: center;
+}
+
+.carRenewal  .content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+.carRenewal  .content-container .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carRenewal .text-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.carRenewal .text-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.carRenewal .text-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.carRenewal .text-content ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.carRenewal .user-form {
+  margin-top: 1rem;
+}
+
+.carRenewal .download-buttons {
+  margin-top: 1rem;
+}
+
+.carRenewal .download-icon {
+  width: 140px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.carRenewal .phone-mockup {
+  max-width: 40%;
+  height: 20%;
+}
+
+@media (max-width: 768px) {
+  .carRenewal .text-content h1 {
+    font-size: 2rem;
+  }
+
+  .carRenewal  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carRenewal  .image-content {
+    margin-top: 2rem;
+  }
+}

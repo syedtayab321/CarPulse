@@ -17,11 +17,15 @@ import BattriesMainPage from "./BattriesPortal/BattriesMainPage";
 import CarRepair from "./Pages/CarRepair";
 import MobileCarService from "./Pages/MobileCarService";
 import RoadSideAssistantMainPage from "./Pages/RoadSideAssitantMain";
+import QrCodeBanner from "./Components/CommonComponents/floatinAppQrCode";
+import CarRenewalMainPage from "./Pages/CarRenewal";
+import WrantyPolicy from "./Components/MainPageComponents/WrantyPolicy";
 
 function App() {
   return (
     <>
       <FloatingWhatsAppButton/>
+      <QrCodeBanner/>
       <Navbar/>
       <Routes>
           <Route path='/' element={<MainPage/>} />
@@ -31,12 +35,14 @@ function App() {
           <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />
           <Route path='/carServiceDetails' element={<OfferDetails/>} />
           <Route path='/contactus' element={<ContactUs/>} />
+          <Route path='/warranty' element={<WrantyPolicy/>} />
           <Route path='/login' element={<LoginPage/>} />
           <Route path='/signup' element={<SignupPage/>} />
 
           <Route path='/carRepair' element={<CarRepair/>} />
           <Route path='/mobileCarService' element={<MobileCarService/>} />
           <Route path='/roadsideAssistant' element={<RoadSideAssistantMainPage/>} />
+          <Route path='/carRenewal' element={<CarRenewalMainPage/>} />
       </Routes>
         <Footer/>
     </>

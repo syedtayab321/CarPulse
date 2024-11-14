@@ -22,3 +22,30 @@ body{
 .custom-navbar .navbar-toggler{
     background: white;
 }
+
+.qr-code-banner {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    background-color: seagreen;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 1;
+}
+
+.qr-code-instructions {
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.qr-code-instructions h5 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 0;
+}
