@@ -1,9 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import image1 from './../../assets/RoadSideAssistant/images/image1.png';
 import icon1 from './../../assets/RoadSideAssistant/images/main-icon.svg'
+import CustomBookNowModal from "../CommonComponents/BookNowModal";
+
 const RoadsideAssistancePage1 = () => {
+    const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
   return (
     <>
+        <CustomBookNowModal show={showModal} handleClose={handleCloseModal} />
         <div className='main-container'>
              <div className='left-section'>
                  <div className='heading'>
@@ -14,7 +21,7 @@ const RoadsideAssistancePage1 = () => {
                             <h3>Flat Tyre</h3>
                             <p>Stuck with a flat tyre? Our patrol can be with you within 40 minutes and help you change your spare tyre to get you back on the road as soon as possible</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn'>Book Now</button>
+                            <button className='btn' onClick={handleShowModal}>Book Now</button>
                         </div>
                         <div className='content-right'>
                              <img className='circle-image' src={icon1} alt='main'/>
@@ -25,7 +32,7 @@ const RoadsideAssistancePage1 = () => {
                             <h3>Flat Battery</h3>
                             <p>Stuck with a flat battery? We can come and jump start your car battery within 40 minutes. We will also generate a free battery report for you</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn'>Book Now</button>
+                            <button className='btn' onClick={handleShowModal}>Book Now</button>
                         </div>
                         <div className='content-right'>
                              <img className='circle-image' src={icon1} alt='main'/>
@@ -36,7 +43,7 @@ const RoadsideAssistancePage1 = () => {
                             <h3>Pickup and Drop Off</h3>
                             <p>Need a recovery? Our recovery truck can be at your location within 40 minutes. We recover cars, vans and mini-buses</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn'>Book Now</button>
+                            <button className='btn' onClick={handleShowModal}>Book Now</button>
                         </div>
                         <div className='content-right'>
                              <img className='circle-image' src={icon1} alt='main'/>
@@ -62,7 +69,7 @@ const RoadsideAssistancePage1 = () => {
                             1 Flat Tyre<br/>
                             1 Registration Renewal (Excluding RTA Charge) / * Per Year</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn btn-success'>Book Now</button>
+                            <button className='btn btn-success' onClick={handleShowModal}>Book Now</button>
                         </div>
                  </div>
                       <div className='content-section'>
@@ -76,7 +83,7 @@ const RoadsideAssistancePage1 = () => {
                                 2 Pick up and Drop off<br/>
                                 2 Registration Renewal (Excluding RTA Charge) / * Per Year</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn btn-success'>Book Now</button>
+                            <button className='btn btn-success' onClick={handleShowModal}>Book Now</button>
                         </div>
                  </div>
                       <div className='content-section'>
@@ -91,7 +98,7 @@ const RoadsideAssistancePage1 = () => {
                                         3 Pick up and Drop off<br/>
                                         3 Registration Renewal (Excluding RTA Charge) / * Per Year</p>
                             <h3 className='price'>345 AED</h3>
-                            <button className='btn btn-success'>Book Now</button>
+                            <button className='btn btn-success' onClick={handleShowModal}>Book Now</button>
                         </div>
                  </div>
              </div>

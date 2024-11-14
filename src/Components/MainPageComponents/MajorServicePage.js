@@ -1,82 +1,99 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faOilCan, faCarSide, faWater, faTools } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './../../assets/css/majorServices.css';
-import images1 from './../../assets/images/card1.jpg';
-import images2 from './../../assets/images/card2.jpg';
-import images3 from './../../assets/images/card3.jpg';
+import './../ServiceDetailsComponents/Page1';
+import { FaCar } from 'react-icons/fa';
+import CustomBookNowModal from "../CommonComponents/BookNowModal";
 
-const carServicesData = [
-    {
-        icon: faOilCan,
-        title: 'Oil Change',
-        description: 'Quick and affordable oil changes to keep your engine running smoothly.',
-        image: images1,
-        link: '/carServiceDetails'
-    },
-    {
-        icon: faCarSide,
-        title: 'Tire Services',
-        description: 'Professional tire rotation, alignment, and replacement services.',
-        image: images2,
-        link: '/carServiceDetails'
-    },
-    {
-        icon: faWater,
-        title: 'Car Wash & Detailing',
-        description: 'Complete wash and detailing services to keep your car looking new.',
-        image: images3,
-        link: '/carServiceDetails'
-    },
-    {
-        icon: faTools,
-        title: 'Engine Diagnostics',
-        description: 'Comprehensive diagnostics to identify and fix any engine issues.',
-        image: images1,
-        link: '/engine-diagnostics'
-    },
-    {
-        icon: faWater,
-        title: 'Car Wash & Detailing',
-        description: 'Complete wash and detailing services to keep your car looking new.',
-        image: images3,
-        link: '/car-wash'
-    },
-    {
-        icon: faTools,
-        title: 'Engine Diagnostics',
-        description: 'Comprehensive diagnostics to identify and fix any engine issues.',
-        image: images1,
-        link: '/engine-diagnostics'
-    }
-];
+function MajorServices() {
 
-const CarServices = () => {
-    return (
-        <div className="mservices-section py-5">
-            <h2 className="text-center mb-5">Our Car Services</h2>
-            <div className="row">
-                {carServicesData.map((service, index) => (
-                    <div key={index} className="col-md-4 col-lg-4 mb-4">
-                        <Link to={service.link} style={{ textDecoration: 'none' }}>  {/* Wrap the card with Link */}
-                            <div className="service-card shadow-sm">
-                                <div className="service-image">
-                                    <img src={service.image} alt={service.title} className="img-fluid rounded" />
-                                </div>
-                                <div className="service-content">
-                                    <FontAwesomeIcon icon={service.icon} className="service-icon" />
-                                    <h3 className="service-title">{service.title}</h3>
-                                    <p className="service-description">{service.description}</p>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
+  const [showModal, setShowModal] = useState(false);
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  return (
+    <>
+          <CustomBookNowModal show={showModal} handleClose={handleCloseModal} />
+          <div className="detail-container my-5">
+            <div className="top-bar py-2 text-center text-white">
+              <h3>Service Details</h3>
             </div>
-        </div>
-    );
-};
 
-export default CarServices;
+            <div className="row justify-content-center">
+              <div className="col-lg-8 p-4 shadow-sm service-box position-relative">
+                <div className="most-popular-tag">Most Popular</div>
+                <h2 className="text-center mb-4">MAJOR SERVICE</h2>
+                <div className="row">
+                  {/* What's Included */}
+                  <div className="col-md-6">
+                    <h4>WHAT'S INCLUDED</h4>
+                    <ul className="list-unstyled">
+                      {[
+                        "Oil Filter",
+                        "Oil 5W30 (Free Promotion)",
+                        "Collection & Delivery",
+                        "All Fluids Top-Up",
+                        "Tyre Check & Air Pressure",
+                        "Reset car service Light",
+                        "360-degree Health Check",
+                        "Computer Diagnostics Report",
+                        "AC Checkup",
+                        "Brake Check",
+                        "Car Wash",
+                        "AC Filter Replacement (Labour)",
+                        "Air Filter Replacement (Labour)",
+                        "Oil Filter Replacement (Labour)",
+                        "Oil Change (Labour)"
+                      ].map((item, index) => (
+                        <li key={index} className="included-item">
+                          <input type="checkbox" checked readOnly />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="col-md-6">
+                    <h4>PARTS NOT INCLUDED</h4>
+                    <ul className="list-unstyled">
+                      {["AC Filter", "Air Filter", "Spark Plugs", "Spark Plugs Replacement (Labour)"].map(
+                        (item, index) => (
+                          <li key={index} className="not-included-item">
+                            <input type="checkbox" readOnly />
+                            {item}
+                          </li>
+                        )
+                      )}
+                    </ul>
+                    <div className="price-section mt-4 text-center">
+                      <span className="original-price">499 AED</span>
+                      <span className="discounted-price">349 AED</span>
+                    </div>
+                  </div>
+                  </div>
+                <div className="discount-box p-3 mt-4 position-relative">
+                  <h5>GET FREE OIL AND AED 150 OFF WHEN YOU BOOK TODAY</h5>
+                  <h2>NOW 349 AED</h2>
+
+                  {/* Countdown Timer */}
+                  <div className="d-flex justify-content-center my-3">
+                    {["DAYS", "HOURS", "MINUTES", "SECONDS"].map((unit, index) => (
+                      <div key={index} className="countdown-unit text-center mx-2">
+                        <span className="countdown-number">00</span>
+                        <span className="countdown-label">{unit}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button className="btn btn-danger book-now-btn" onClick={handleShowModal}>
+                    BOOK NOW <FaCar className="car-icon animate-car" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Callback Request Button */}
+              {/*<button className="callback-request-btn">Request a Callback</button>*/}
+            </div>
+          </div>
+    </>
+  );
+}
+
+export default MajorServices;

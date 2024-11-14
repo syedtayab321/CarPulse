@@ -10,7 +10,7 @@ import images4 from './../../assets/images/card3.jpg';
 const dummyData = [
   { description: 'High-quality battery sales', image: images1, link: '/roadsideAssistant', color: '#4caf50' },
   { description: 'Purchase old batteries at best prices', image: images2, link: '/mobileCarService', color: '#ff9800' },
-  { description: 'Expert battery installation', image: images3, link: '/serviceDetails', color: '#2196f3' },
+  { description: 'Expert battery installation', image: images3, link: '/carDetailing', color: '#2196f3' },
   { description: 'Environment-friendly recycling', image: images4, link: '/serviceDetails', color: '#f44336' },
     { description: 'Purchase old batteries at best prices', image: images2, link: '/carRenewal', color: '#ff9800' },
   { description: 'Expert battery installation', image: images3, link: '/carRepair', color: '#2196f3' },

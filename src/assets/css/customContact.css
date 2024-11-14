@@ -1,0 +1,45 @@
+.contact-component {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.contact-component .contact-card {
+    border: none;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-component .contact-icon {
+    color: purple;
+    margin-bottom: 10px;
+}
+
+.contact-component .contact-text {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-component .btn-custom-purple {
+    background-color: purple;
+    color: white;
+    border: none;
+}
+
+.contact-component .btn-custom-purple:hover {
+    background-color: darkviolet;
+    color: white;
+}
+
+.contact-component .contact-icon a{
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+   .contact-component .contact-card {
+        margin-bottom: 20px;
+    }
+}

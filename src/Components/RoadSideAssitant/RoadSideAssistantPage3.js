@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import image1 from './../../assets/RoadSideAssistant/images/image2.png'
+import CustomBookNowModal from "../CommonComponents/BookNowModal";
 const RoadsideAssistance = () => {
+   const [showModal, setShowModal] = useState(false);
+   const handleShowModal = () => setShowModal(true);
+   const handleCloseModal = () => setShowModal(false);
   return (
-    <Container className="roadside-assistance-3 my-5">
+    <>
+       <CustomBookNowModal show={showModal} handleClose={handleCloseModal} />
+        <Container className="roadside-assistance-3 my-5">
       <h2 className="text-center text-success">Roadside Assistance</h2>
       <p className="text-center">
         Need Roadside Assistance? Get on-demand service from just about anywhere in Dubai.
@@ -36,12 +42,13 @@ const RoadsideAssistance = () => {
             Book for a flat tyre change and get highly trained & experienced technicians within just a few clicks or call us for emergency flat tyre change service at your doorstep within 40 minutes in Dubai call <a href="tel:8002665464" className="text-success">8002665464 (800 BOOKING)</a>
           </p>
           <div className="button-group">
-            <Button variant="success" className="me-2">BOOK NOW</Button>
+            <Button variant="success" className="me-2" onClick={handleShowModal}>BOOK NOW</Button>
             <Button variant="outline-success">CALL US NOW</Button>
           </div>
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
 
