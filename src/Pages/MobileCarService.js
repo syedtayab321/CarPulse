@@ -3,13 +3,13 @@ import MobileCarServiceMain from "../Components/MobileRepair/MobileServiceMain";
 import MobileCarHealthCheck from "../Components/MobileRepair/MobileCarHealthCheck";
 import MobileCarBanner from "../Components/MobileRepair/MobileCarBanner";
 import MobileCarHowItWork from "../Components/MobileRepair/MobileCarHowItWork";
-import'./../assets/mobileCarService/banner.css';
-import'./../assets/mobileCarService/MobileHealthCheck.css';
-import'./../assets/mobileCarService/MobileHowiwork.css';
+import'../Components/MobileRepair/css/banner.css';
+import'../Components/MobileRepair/css/MobileHealthCheck.css';
+import'../Components/MobileRepair/css/MobileHowiwork.css';
 function MobileCarService() {
   return (
      <>
-        <MobileCarServiceMain/>
+        <MobileCarServiceMain title={'Mobile Auto Service'} index={0}/>
         <MobileCarHealthCheck/>
         <MobileCarBanner/>
         <MobileCarHowItWork/>

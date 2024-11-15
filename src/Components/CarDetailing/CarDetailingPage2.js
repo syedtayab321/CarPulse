@@ -1,9 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import {fetchServiceByTitle} from "../../BackendFunctions/FetchServicesbyTitle";
+import CustomBookNowModal from "../CommonComponents/BookNowModal";
 
-function CarDetailingPage2() {
+function CarDetailingPage2({title,index}) {
+     const [serviceData, setServiceData] = useState(null);
+     const [showModal, setShowModal] = useState(false);
+      const handleShowModal = () => setShowModal(true);
+      const handleCloseModal = () => setShowModal(false);
+
+  useEffect(() => {
+    const getService = async () => {
+      try {
+        const data = await fetchServiceByTitle(title);
+        setServiceData(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Failed to fetch service data:", error);
+      }
+    };
+    getService();
+  }, []);
+
+  if (serviceData === null){
     return (
-        <Container className="my-5 car-detailing-page">
+      <div>Loading.....</div>
+    );
+  }
+    const packageData = serviceData?.packages?.[index];
+
+    return (
+        <>
+          <CustomBookNowModal show={showModal} handleClose={handleCloseModal} packageName={packageData?.packageName} serviceName={serviceData?.serviceTitle} price={packageData?.newPrice} />
+          <Container className="my-5 car-detailing-page">
             <Row>
                 <Col md={8}>
                     <h2>Easy and Convenient Car Detailing in Dubai, UAE</h2>
@@ -35,22 +64,29 @@ function CarDetailingPage2() {
                             <h3 className="text-center">Basic Service</h3>
                             <h5>What's Included</h5>
                             <ul>
-                                <li>Collection & Delivery</li>
-                                <li>360 Degree Health Check</li>
-                                <li>Car Wash</li>
-                                <li>Tyre Check & Air Pressure</li>
-                                <li>Oil Filter Replacement (Labour)</li>
-                                <li>Oil Change (Labour)</li>
+                                {packageData?.includedItems?.map((item, index) => (
+                                    <li key={index} className="included-item">
+                                      {item}
+                                    </li>
+                                  ))}
                             </ul>
                             <h5>Parts Not Included</h5>
                             <ul className="not-included">
-                                <li>Oil</li>
-                                <li>Oil Filter</li>
+                                {packageData?.notIncludedItems?.map(
+                                    (item, index) => (
+                                      <li key={index} className="not-included-item">
+                                        <input type="checkbox" readOnly />
+                                        {item}
+                                      </li>
+                                    )
+                                  )}
                             </ul>
                             <div className="price-section">
-                                <p>Was <s>200 AED</s></p>
-                                <p className="current-price">Now 159 AED</p>
-                                <p>Get free wash and AED 40 off when you book today</p>
+                                <p>Was <s>
+                                    {packageData?.oldPrice ? `${packageData.oldPrice} AED` : 'N/A'}
+                                </s></p>
+                                <p className="current-price">Now {packageData?.newPrice ? `${packageData.newPrice} AED` : 'N/A'}</p>
+                                <p>Get free wash and AED {packageData?.oldPrice-packageData?.newPrice} off when you book today</p>
                             </div>
                             <div className="timer">
                                 <span>5 Days</span> : <span>3 Hours</span> : <span>56 Minutes</span> : <span>47 Seconds</span>
@@ -61,6 +97,7 @@ function CarDetailingPage2() {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 }
 

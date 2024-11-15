@@ -16,7 +16,7 @@
 }
 
 .signup-image {
-  background-image: url('./../images/card3.jpg');
+  background-image: url('../../../assets/images/card3.jpg');
   background-size: cover;
   background-position: center;
 }

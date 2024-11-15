@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Nav } from 'react-bootstrap';
-import './../../assets/css/warrantyPolicy.css';
+import './css/warrantyPolicy.css';
 
 const WarrantyPolicy = () => {
   return (

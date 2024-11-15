@@ -1,44 +1,58 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import './../../assets/css/bookNowModal.css';
-import {useNavigate} from "react-router-dom";
+import { getFirestore, doc, setDoc, collection, addDoc } from 'firebase/firestore';
+import { app } from '../../FirebaseConfig';
+import './css/bookNowModal.css';
+import { v4 as uuidv4 } from 'uuid';
+const db = getFirestore(app);
 
-const CustomBookNowModal = ({ show, handleClose }) => {
-  const navigate = useNavigate();
+const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price }) => {
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     location: '',
-    mobile: '',
-    vehicleNumber: '',
-    vehicleType: '',
+    phoneNumber: '',
+    useremail: '',
+    serviceName: serviceName,
+    packageName: packageName,
+    price: price,
+    orderID: '',
   });
   const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const validateForm = () => {
     let formErrors = {};
-    if (!formData.name) formErrors.name = 'Name is required';
+    if (!formData.username) formErrors.username = 'Name is required';
     if (!formData.location) formErrors.location = 'Location is required';
-    if (!/^\d{10}$/.test(formData.mobile)) formErrors.mobile = 'Enter a valid 10-digit mobile number';
-    if (!formData.vehicleNumber) formErrors.vehicleNumber = 'Vehicle number is required';
-    if (!formData.vehicleType) formErrors.vehicleType = 'Vehicle type is required';
+    if (!/^\d{10}$/.test(formData.phoneNumber)) formErrors.phoneNumber = 'Enter a valid 10-digit mobile number';
+    if (!formData.useremail) formErrors.useremail = 'Email is required';
 
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0;
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert('Form submitted successfully');
-      handleClose();
+      try {
+       const orderID = uuidv4();
+        const orderRef = doc(db, 'Orders', orderID); // Use orderID as document name
+        const orderData = { ...formData, orderID };
+        await setDoc(orderRef, orderData);
+        alert('Form submitted successfully');
+        handleClose();
+      } catch (error) {
+        console.error('Error adding document: ', error);
+        alert('Error saving data. Please try again.');
+      }
     }
   };
-  const user = localStorage.getItem('user');
 
-  if (user !== null) {
-        return (
-            <Modal show={show} onHide={handleClose} centered animation={true} dialogClassName="custom-modal">
+  return (
+    <Modal show={show} onHide={handleClose} centered animation={true} dialogClassName="custom-modal">
       <Modal.Header closeButton>
         <Modal.Title>Fill Out Your Details</Modal.Title>
       </Modal.Header>
@@ -48,12 +62,12 @@ const CustomBookNowModal = ({ show, handleClose }) => {
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
-              name="name"
-              value={formData.name}
+              name="username"
+              value={formData.username}
               onChange={handleChange}
-              isInvalid={!!errors.name}
+              isInvalid={!!errors.username}
             />
-            <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.username}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group controlId="formLocation" className="mt-3">
@@ -68,40 +82,28 @@ const CustomBookNowModal = ({ show, handleClose }) => {
             <Form.Control.Feedback type="invalid">{errors.location}</Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group controlId="formMobile" className="mt-3">
+          <Form.Group controlId="formUserEmail" className="mt-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              name="useremail"
+              value={formData.useremail}
+              onChange={handleChange}
+              isInvalid={!!errors.useremail}
+            />
+            <Form.Control.Feedback type="invalid">{errors.useremail}</Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group controlId="formPhoneNumber" className="mt-3">
             <Form.Label>Mobile Number</Form.Label>
             <Form.Control
-              type="tel"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleChange}
-              isInvalid={!!errors.mobile}
-            />
-            <Form.Control.Feedback type="invalid">{errors.mobile}</Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group controlId="formVehicleNumber" className="mt-3">
-            <Form.Label>Vehicle Number</Form.Label>
-            <Form.Control
               type="text"
-              name="vehicleNumber"
-              value={formData.vehicleNumber}
+              name="phoneNumber"
+              value={formData.phoneNumber}
               onChange={handleChange}
-              isInvalid={!!errors.vehicleNumber}
+              isInvalid={!!errors.phoneNumber}
             />
-            <Form.Control.Feedback type="invalid">{errors.vehicleNumber}</Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group controlId="formVehicleType" className="mt-3">
-            <Form.Label>Vehicle Type</Form.Label>
-            <Form.Control
-              type="text"
-              name="vehicleType"
-              value={formData.vehicleType}
-              onChange={handleChange}
-              isInvalid={!!errors.vehicleType}
-            />
-            <Form.Control.Feedback type="invalid">{errors.vehicleType}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.phoneNumber}</Form.Control.Feedback>
           </Form.Group>
 
           <Button type="submit" variant="success" className="w-100 mt-4 submit-btn">
@@ -110,11 +112,7 @@ const CustomBookNowModal = ({ show, handleClose }) => {
         </Form>
       </Modal.Body>
     </Modal>
-         );
-  }else {
-      navigate('/login');
-  }
-
+  );
 };
 
 export default CustomBookNowModal;

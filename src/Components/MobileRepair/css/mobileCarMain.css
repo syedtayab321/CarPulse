@@ -16,7 +16,20 @@
   font-size: 24px;
   font-weight: bold;
 }
-
+.mobile-car-service .service-content .new-price,.old-price{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.mobile-car-service .service-content .new-price h3{
+  font-size: 17px;
+  color: green;
+}
+.mobile-car-service .service-content .old-price h3{
+  font-size: 17px;
+  color: red;
+}
 .mobile-car-service .service-content p {
   color: #555;
 }

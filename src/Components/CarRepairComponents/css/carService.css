@@ -10,35 +10,35 @@
 }
 
 .icon-service {
-  background-image: url('../../assets/carServiceIcons/car-service.png');
+  background-image: url('../../../assets/carServiceIcons/car-service.png');
 }
 
 .icon-recovery {
-  background-image: url('../../assets/carServiceIcons/recovery.svg');
+  background-image: url('../../../assets/carServiceIcons/recovery.svg');
 }
 
 .icon-detailing {
-  background-image: url('../../assets/carServiceIcons/cleaning-service.svg');
+  background-image: url('../../../assets/carServiceIcons/cleaning-service.svg');
 }
 
 .icon-ac-repair {
-  background-image: url('../../assets/carServiceIcons/ac-service.png');
+  background-image: url('../../../assets/carServiceIcons/ac-service.png');
 }
 
 .icon-oil-change {
-  background-image: url('../../assets/carServiceIcons/oilchange.jpeg');
+  background-image: url('../../../assets/carServiceIcons/oilchange.jpeg');
 }
 
 .icon-wheel-alignment {
-  background-image: url('../../assets/carServiceIcons/wheel-alignment.jpg');
+  background-image: url('../../../assets/carServiceIcons/wheel-alignment.jpg');
 }
 
 .icon-maintenance {
-  background-image: url('../../assets/carServiceIcons/maintainance.png');
+  background-image: url('../../../assets/carServiceIcons/maintainance.png');
 }
 
 .icon-ac-refill {
-  background-image: url('../../assets/carServiceIcons/oilchange.jpeg');
+  background-image: url('../../../assets/carServiceIcons/oilchange.jpeg');
 }
 
 .service-icon {

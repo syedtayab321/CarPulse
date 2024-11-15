@@ -19,7 +19,7 @@ import RoadSideAssistantMainPage from "./Pages/RoadSideAssitantMain";
 import QrCodeBanner from "./Components/CommonComponents/floatinAppQrCode";
 import CarRenewalMainPage from "./Pages/CarRenewal";
 import WrantyPolicy from "./Components/MainPageComponents/WrantyPolicy";
-import MajorServices from "./Components/MainPageComponents/MajorServicePage";
+import MajorServices from "./Components/CommonComponents/MajorServicePage";
 import CarDetailingMainPage from "./Pages/CarDetailingMainPage";
 import CustomContactComponent from "./Components/CommonComponents/CustomContactComponent";
 
@@ -33,7 +33,7 @@ function App() {
           <Route path='/' element={<MainPage/>} />
           <Route path='/battries' element={<BattriesMainPage/>} />
           <Route path='/aboutus' element={<AboutUsPage/>} />
-          <Route path='/major-services' element={<MajorServices/>} />
+          <Route path='/major-services' element={<MajorServices title={'Car Repair'} index={0}/>} />
           <Route path='/serviceDetails' element={<ServicesDetailsPage/>} />
           <Route path='/carServiceDetails' element={<OfferDetails/>} />
           <Route path='/contactus' element={<ContactUs/>} />

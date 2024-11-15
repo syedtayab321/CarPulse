@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldAlt, faClock, faDollarSign, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './../../assets/css/keyfeatures.css';
+import './css/keyfeatures.css';
 
 const keyFeaturesData = [
     {

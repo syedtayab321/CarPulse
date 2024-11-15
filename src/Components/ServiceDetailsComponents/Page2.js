@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Nav, Tab, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faGlobe, faMobileAlt, faTruck, faWrench, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import '../../assets/css/ServiceDetailsPage2.css';
+import './css/ServiceDetailsPage2.css';
 import video1 from './../../assets/videos/video1.mp4'
 const ServiceDetailsPage2 = () => {
   return (

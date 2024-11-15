@@ -6,9 +6,11 @@ export const fetchServicesData = async () => {
   const servicesData = servicesSnapshot.docs.map(doc => ({
     id: doc.id,
     title: doc.data().serviceTitle,
+    icon:doc.data().serviceIcon,
     description: doc.data().description || 'Hello Description Here',
     color: doc.data().color || 'purple',
-    link: doc.data().link || '/serviceDetails'
+    link: doc.data().link || '/serviceDetails',
+
   }));
 
   return servicesData;

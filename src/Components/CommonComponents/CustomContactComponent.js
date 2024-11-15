@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import './../../assets/css/customContact.css';
+import './css/customContact.css';
 import { FaMobileAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 
 function CustomContactComponent() {

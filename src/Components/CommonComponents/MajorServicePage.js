@@ -1,49 +1,56 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './../ServiceDetailsComponents/Page1';
+import './css/MajorServices.css';
 import { FaCar } from 'react-icons/fa';
-import CustomBookNowModal from "../CommonComponents/BookNowModal";
+import CustomBookNowModal from "./BookNowModal";
+import {fetchServiceByTitle} from "../../BackendFunctions/FetchServicesbyTitle";
 
-function MajorServices() {
+function MajorServicePage({title , index}) {
 
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
+  const [serviceData, setServiceData] = useState(null);
+
+  useEffect(() => {
+    const getService = async () => {
+      try {
+        const data = await fetchServiceByTitle(title);
+        setServiceData(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Failed to fetch service data:", error);
+      }
+    };
+    getService();
+  }, []);
+
+  if (serviceData === null){
+    return (
+      <div>Loading.....</div>
+    );
+  }
+    const packageData = serviceData?.packages?.[index];
   return (
     <>
-          <CustomBookNowModal show={showModal} handleClose={handleCloseModal} />
+         <CustomBookNowModal show={showModal} handleClose={handleCloseModal} packageName={packageData?.packageName} serviceName={serviceData?.serviceTitle} price={packageData?.newPrice} />
           <div className="detail-container my-5">
             <div className="top-bar py-2 text-center text-white">
-              <h3>Service Details</h3>
+              <h3>{serviceData?.serviceTitle || 'Service Title'}</h3>
             </div>
 
             <div className="row justify-content-center">
               <div className="col-lg-8 p-4 shadow-sm service-box position-relative">
                 <div className="most-popular-tag">Most Popular</div>
-                <h2 className="text-center mb-4">MAJOR SERVICE</h2>
-                <div className="row">
+                <h2 className="text-center mb-4">{packageData?.packageName ? `${packageData.packageName}` : 'N/A'}</h2>
+                 {packageData && (
+                     <div className="row">
                   {/* What's Included */}
                   <div className="col-md-6">
                     <h4>WHAT'S INCLUDED</h4>
                     <ul className="list-unstyled">
-                      {[
-                        "Oil Filter",
-                        "Oil 5W30 (Free Promotion)",
-                        "Collection & Delivery",
-                        "All Fluids Top-Up",
-                        "Tyre Check & Air Pressure",
-                        "Reset car service Light",
-                        "360-degree Health Check",
-                        "Computer Diagnostics Report",
-                        "AC Checkup",
-                        "Brake Check",
-                        "Car Wash",
-                        "AC Filter Replacement (Labour)",
-                        "Air Filter Replacement (Labour)",
-                        "Oil Filter Replacement (Labour)",
-                        "Oil Change (Labour)"
-                      ].map((item, index) => (
+                      {packageData?.includedItems?.map((item, index) => (
                         <li key={index} className="included-item">
                           <input type="checkbox" checked readOnly />
                           {item}
@@ -54,7 +61,7 @@ function MajorServices() {
                   <div className="col-md-6">
                     <h4>PARTS NOT INCLUDED</h4>
                     <ul className="list-unstyled">
-                      {["AC Filter", "Air Filter", "Spark Plugs", "Spark Plugs Replacement (Labour)"].map(
+                      {packageData?.notIncludedItems?.map(
                         (item, index) => (
                           <li key={index} className="not-included-item">
                             <input type="checkbox" readOnly />
@@ -64,14 +71,25 @@ function MajorServices() {
                       )}
                     </ul>
                     <div className="price-section mt-4 text-center">
-                      <span className="original-price">499 AED</span>
-                      <span className="discounted-price">349 AED</span>
+                      <span className="original-price">
+                        {packageData?.oldPrice ? `${packageData.oldPrice} AED` : 'N/A'}
+                      </span>
+                      <span className="discounted-price">
+                        {packageData?.newPrice ? `${packageData.newPrice} AED` : 'N/A'}
+                      </span>
                     </div>
                   </div>
                   </div>
+                 )}
+                <div className='descriptionBox'>
+                      <h3>DESCRIPTION</h3>
+                      <p>
+                          {packageData?.description ? `${packageData.description} AED` : 'No Description Provided'}
+                      </p>
+                  </div>
                 <div className="discount-box p-3 mt-4 position-relative">
                   <h5>GET FREE OIL AND AED 150 OFF WHEN YOU BOOK TODAY</h5>
-                  <h2>NOW 349 AED</h2>
+                  <h2>NOW  {packageData?.newPrice ? `${packageData.newPrice} AED` : 'N/A'}</h2>
 
                   {/* Countdown Timer */}
                   <div className="d-flex justify-content-center my-3">
@@ -86,7 +104,9 @@ function MajorServices() {
                     BOOK NOW <FaCar className="car-icon animate-car" />
                   </button>
                 </div>
+
               </div>
+
 
               {/* Callback Request Button */}
               {/*<button className="callback-request-btn">Request a Callback</button>*/}
@@ -96,4 +116,4 @@ function MajorServices() {
   );
 }
 
-export default MajorServices;
+export default MajorServicePage;

@@ -3,7 +3,7 @@ import image1 from './../../assets/images/card1.jpg'
 import {Link, useNavigate} from "react-router-dom";
 import { Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
-import  './../../assets/css/login.css'
+import  './css/login.css'
 import {signIn} from "../../BackendFunctions/Auth";
 import {Spinner} from "react-bootstrap";
 export  default function LoginPage(){

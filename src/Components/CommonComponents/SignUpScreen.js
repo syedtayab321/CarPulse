@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { signUp } from '../../BackendFunctions/Auth';
 import {Button, Form, Container, Row, Col, Spinner} from 'react-bootstrap';
-import './../../assets/css/SignUpPage.css';
+import './css/SignUpPage.css';
 import { Link } from "react-router-dom";
 
 const SignupPage = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/carpulseLogo.jpeg';
-import '../../assets/css/navbar.css';
+import './css/navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../FirebaseConfig';
