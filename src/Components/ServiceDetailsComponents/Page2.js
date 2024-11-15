@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faGlobe, faMobileAlt, faTruck, faWrench, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import './css/ServiceDetailsPage2.css';
 import video1 from './../../assets/videos/video1.mp4'
-const ServiceDetailsPage2 = () => {
+const HowItWorks = () => {
   return (
     <Container className="how-it-works-section">
       <h2 className="text-center mt-5">HOW IT WORKS</h2>
@@ -36,15 +36,15 @@ const ServiceDetailsPage2 = () => {
                 <h5><FontAwesomeIcon icon={faMobileAlt} /> Download the App</h5>
                 <p>Book with just a tap on our mobile app.</p>
 
-                <Form className="download-app-form">
-                  <Form.Group controlId="formPhone">
-                    <Form.Label>Enter your number below to get the download link</Form.Label>
-                    <div className="d-flex">
-                      <Form.Control type="text" placeholder="+971" />
-                      <Button variant="success">Get the link now</Button>
-                    </div>
-                  </Form.Group>
-                </Form>
+                {/*<Form className="download-app-form">*/}
+                {/*  <Form.Group controlId="formPhone">*/}
+                {/*    <Form.Label>Enter your number below to get the download link</Form.Label>*/}
+                {/*    <div className="d-flex">*/}
+                {/*      <Form.Control type="text" placeholder="+971" />*/}
+                {/*      <Button variant="success">Get the link now</Button>*/}
+                {/*    </div>*/}
+                {/*  </Form.Group>*/}
+                {/*</Form>*/}
               </Col>
               <Col md={6} className="video-placeholder">
                 {/* Replace with your video link or file */}
@@ -116,4 +116,4 @@ const ServiceDetailsPage2 = () => {
   );
 };
 
-export default ServiceDetailsPage2;
+export default HowItWorks;

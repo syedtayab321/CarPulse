@@ -5,7 +5,7 @@ import WarrantyPolicy from "../Components/MainPageComponents/WrantyPolicy";
 import FAQs from "../Components/MainPageComponents/Faqs";
 import React from "react";
 import MajorServices from "../Components/CommonComponents/MajorServicePage";
-import ServiceDetailsPage2 from "../Components/ServiceDetailsComponents/Page2";
+import HowItWorks from "../Components/ServiceDetailsComponents/Page2";
 
 export default function MainPage(){
     return(
@@ -13,7 +13,7 @@ export default function MainPage(){
             <HomePage/>
             <AboutUsPage/>
             <MajorServices title={'Car Renewal'} index={0} />
-            <ServiceDetailsPage2/>
+            <HowItWorks/>
             <KeyFeatures/>
             <WarrantyPolicy/>
             <FAQs/>

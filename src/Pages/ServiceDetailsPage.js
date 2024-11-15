@@ -1,5 +1,5 @@
 import React from 'react';
-import ServiceDetailsPage2 from "../Components/ServiceDetailsComponents/Page2";
+import HowItWorks from "../Components/ServiceDetailsComponents/Page2";
 import WrantyPolicy from "../Components/MainPageComponents/WrantyPolicy";
 import MajorServicePage from "../Components/CommonComponents/MajorServicePage";
 
@@ -9,7 +9,7 @@ function ServiceDetails() {
        <div className='serviceDetailsMain'>
            <MajorServicePage title={'Car Service'} index={0}/>
            <MajorServicePage title={'Car Service'} index={1}/>
-           <ServiceDetailsPage2/>
+           <HowItWorks/>
            <WrantyPolicy/>
        </div>
      </>
