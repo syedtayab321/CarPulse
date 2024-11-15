@@ -9,6 +9,7 @@ const SignupPage = () => {
     name: '',
     email: '',
     location: '',
+    phoneNumber: '',
     password: '',
   });
   const [loading, setLoading] = useState(false);
@@ -20,8 +21,8 @@ const SignupPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const { name, email, location, password } = formData;
-    const result = await signUp(name, email, password, location);
+    const { name, email,phoneNumber, location, password } = formData;
+    const result = await signUp(name, email,phoneNumber, password, location);
 
     setLoading(false);
     if (result.success) {
@@ -59,6 +60,18 @@ const SignupPage = () => {
                 placeholder="Enter your email"
                 name="email"
                 value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formphoneNumber" className="mb-3">
+              <Form.Label>Mobile Number</Form.Label>
+              <Form.Control
+                type="tel"
+                placeholder="Enter your Mobile Number"
+                name="phoneNumber"
+                value={formData.phoneNumber}
                 onChange={handleChange}
                 required
               />

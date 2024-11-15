@@ -6,10 +6,12 @@ import FAQs from "../Components/MainPageComponents/Faqs";
 import React from "react";
 import MajorServices from "../Components/CommonComponents/MajorServicePage";
 import HowItWorks from "../Components/ServiceDetailsComponents/Page2";
+import QrCodeBanner from "../Components/CommonComponents/floatinAppQrCode";
 
 export default function MainPage(){
     return(
         <>
+            <QrCodeBanner/>
             <HomePage/>
             <AboutUsPage/>
             <MajorServices title={'Car Renewal'} index={0} />

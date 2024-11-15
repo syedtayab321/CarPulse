@@ -16,19 +16,19 @@ import BattriesMainPage from "./BattriesPortal/BattriesMainPage";
 import CarRepair from "./Pages/CarRepair";
 import MobileCarService from "./Pages/MobileCarService";
 import RoadSideAssistantMainPage from "./Pages/RoadSideAssitantMain";
-import QrCodeBanner from "./Components/CommonComponents/floatinAppQrCode";
 import CarRenewalMainPage from "./Pages/CarRenewal";
 import WrantyPolicy from "./Components/MainPageComponents/WrantyPolicy";
 import MajorServices from "./Components/CommonComponents/MajorServicePage";
 import CarDetailingMainPage from "./Pages/CarDetailingMainPage";
 import CustomContactComponent from "./Components/CommonComponents/CustomContactComponent";
 import CarContractMain from "./Pages/CarContractMainPage";
+import RequestQuoteModalButton from "./Components/CommonComponents/RequestQuoteModalButton";
 
 function App() {
   return (
     <>
       <FloatingWhatsAppButton/>
-      <QrCodeBanner/>
+      <RequestQuoteModalButton/>
       <Navbar/>
       <Routes>
           <Route path='/' element={<MainPage/>} />

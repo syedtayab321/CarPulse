@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'fire
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 
 // Sign up new user
-export const signUp = async (name, email, password, location) => {
+export const signUp = async (name, email, phoneNumber ,password, location) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
@@ -13,7 +13,7 @@ export const signUp = async (name, email, password, location) => {
       name,
       email,
       location,
-      accountStatus: 'pending',
+      phoneNumber,
     });
 
     return { success: true, user };

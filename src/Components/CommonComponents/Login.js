@@ -31,7 +31,7 @@ export  default function LoginPage(){
                                   setLoading(false);
 
                                   if (result.success) {
-                                    localStorage.setItem('user', result.user.name);
+                                    localStorage.setItem('userData', JSON.stringify(result.user));
                                     navigate('/');
                                   } else {
                                     setErrors({ email: "Invalid email or password" });

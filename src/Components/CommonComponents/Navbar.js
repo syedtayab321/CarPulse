@@ -7,7 +7,7 @@ import { auth } from '../../FirebaseConfig';
 import { Modal, Button } from 'react-bootstrap';
 const Navbar = () => {
   const navigate = useNavigate();
-  const userData = localStorage.getItem('user');
+  const userData = JSON.parse(localStorage.getItem('userData'));
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -22,8 +22,8 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      localStorage.removeItem('user');
-      setShowLogoutConfirm(false); // Close the modal
+      localStorage.removeItem('userData');
+      setShowLogoutConfirm(false);
       navigate('/');
     } catch (error) {
       console.error('Error during logout:', error);
@@ -83,7 +83,7 @@ const Navbar = () => {
                   onClick={toggleDropdown}
                   aria-expanded="false"
                 >
-                  <i className="fas fa-user-circle"></i> {userData}
+                  <i className="fas fa-user-circle"></i>{userData.name}
                 </button>
                 {showDropdown && (
                   <div className="dropdown-menu show" style={{ position: 'absolute', right: 0 }}>

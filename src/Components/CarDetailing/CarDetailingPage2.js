@@ -91,7 +91,7 @@ function CarDetailingPage2({title,index}) {
                             <div className="timer">
                                 <span>5 Days</span> : <span>3 Hours</span> : <span>56 Minutes</span> : <span>47 Seconds</span>
                             </div>
-                            <Button variant="danger" className="w-100 mt-3">BOOK NOW</Button>
+                            <Button variant="danger" className="w-100 mt-3" onClick={()=>handleShowModal()}>BOOK NOW</Button>
                         </Card.Body>
                     </Card>
                 </Col>

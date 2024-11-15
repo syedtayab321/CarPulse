@@ -7,11 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 const db = getFirestore(app);
 
 const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price }) => {
+   const userData = JSON.parse(localStorage.getItem('userData'));
   const [formData, setFormData] = useState({
-    username: '',
-    location: '',
-    phoneNumber: '',
-    useremail: '',
+    username: userData?.name || '',
+    location:userData?.location || '',
+    phoneNumber:userData?.phoneNumber || '',
+    useremail:userData?.email || '',
     serviceName: serviceName,
     packageName: packageName,
     price: price,
@@ -66,6 +67,7 @@ const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price
               value={formData.username}
               onChange={handleChange}
               isInvalid={!!errors.username}
+              placeholder='Enter User Name'
             />
             <Form.Control.Feedback type="invalid">{errors.username}</Form.Control.Feedback>
           </Form.Group>
@@ -78,6 +80,7 @@ const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price
               value={formData.location}
               onChange={handleChange}
               isInvalid={!!errors.location}
+              placeholder='Enter Location'
             />
             <Form.Control.Feedback type="invalid">{errors.location}</Form.Control.Feedback>
           </Form.Group>
@@ -90,6 +93,7 @@ const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price
               value={formData.useremail}
               onChange={handleChange}
               isInvalid={!!errors.useremail}
+              placeholder='Enter Email Here'
             />
             <Form.Control.Feedback type="invalid">{errors.useremail}</Form.Control.Feedback>
           </Form.Group>
@@ -102,6 +106,7 @@ const CustomBookNowModal = ({ show, handleClose, serviceName, packageName, price
               value={formData.phoneNumber}
               onChange={handleChange}
               isInvalid={!!errors.phoneNumber}
+              placeholder='Enter Mobile Number Like +97342313331'
             />
             <Form.Control.Feedback type="invalid">{errors.phoneNumber}</Form.Control.Feedback>
           </Form.Group>

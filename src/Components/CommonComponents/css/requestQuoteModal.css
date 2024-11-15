@@ -1,0 +1,76 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.quoteModal .modal-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.quoteModal .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.quoteModal h2 {
+    text-align: center;
+    color: #28a745;
+}
+
+.quoteModal .form-group {
+    margin-bottom: 15px;
+}
+
+.quoteModal .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.quoteModal .form-group input,select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.quoteModal .form-group select{
+    background: #0056b3;
+    color: white;
+}
+.quoteModal .error {
+    color: red;
+    font-size: 12px;
+}
+
+.quoteModal .submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #7a027a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quoteModal .submit-button:hover {
+    background-color:cornflowerblue;
+}

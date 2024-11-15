@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
+import RequestQuoteModal from "../CommonComponents/RequestQuoteModal";
 
 export default function CarDetailingPage1(){
+    const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+    const openQuoteModal = () => setIsQuoteModalOpen(true);
+    const closeQuoteModal = () => setIsQuoteModalOpen(false);
     return(
         <>
+          <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={closeQuoteModal} />
           <main className='detailing-main'>
                 <div className='section-1'>
                      <h1>Car Detailing Dubai</h1>
@@ -17,7 +22,7 @@ export default function CarDetailingPage1(){
                           <div className='divider'></div>
                           <div className='card-section-2'>
                               <button className='btn btn1'>Call Now</button>
-                              <button className='btn btn2'>Get Quote</button>
+                              <button className='btn btn2' onClick={openQuoteModal}>Get Quote</button>
                           </div>
                     </div>
                 </div>
