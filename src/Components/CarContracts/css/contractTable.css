@@ -1,0 +1,28 @@
+.main-table {
+    max-width: 800px;
+}
+
+.table th {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+.main-table .btn-success {
+    color: #fff;
+    font-weight: bold;
+}
+
+.main-table .btn-outline-success {
+    color: #28a745;
+    font-weight: bold;
+    border: 2px solid #28a745;
+}
+
+.main-table .btn + .btn {
+    margin-left: 8px;
+}

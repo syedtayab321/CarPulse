@@ -2,16 +2,36 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { fetchServicesData } from '../../BackendFunctions/FetchServices';
+import BatteryChargingFullIcon from '@mui/icons-material/BatteryChargingFull';
+import BuildIcon from '@mui/icons-material/Build';
+import RecyclingIcon from '@mui/icons-material/Recycling';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import BuildCircleIcon from '@mui/icons-material/BuildCircle';
+import EvStationIcon from '@mui/icons-material/EvStation';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import CarRepairIcon from '@mui/icons-material/CarRepair';
+
+const iconMapping = {
+  battery: <BatteryChargingFullIcon sx={{ fontSize: 68, color: 'white' }} />,
+  service: <BuildIcon sx={{ fontSize: 68, color: 'white' }} />,
+  recycling: <RecyclingIcon sx={{ fontSize: 68, color: 'white' }} />,
+  carService: <DirectionsCarIcon sx={{ fontSize: 68, color: 'white' }} />,
+  build: <BuildCircleIcon sx={{ fontSize: 68, color: 'white' }} />,
+  evStation: <EvStationIcon sx={{ fontSize: 68, color: 'white' }} />,
+  repair: <CarRepairIcon sx={{ fontSize: 68, color: 'white' }} />,
+  construction: <ConstructionIcon sx={{ fontSize: 68, color: 'white' }} />,
+};
 
 const dummyData = [
-  { description: 'High-quality battery sales', link: '/roadsideAssistant', color: '#4caf50' },
-  { description: 'Purchase old batteries at best prices', link: '/mobileCarService', color: '#ff9800' },
-  { description: 'Expert battery installation', link: '/carDetailing', color: '#2196f3' },
-  { description: 'Environment-friendly recycling', link: '/serviceDetails', color: '#f44336' },
-  { description: 'Purchase old batteries at best prices', link: '/carRenewal', color: '#ff9800' },
-  { description: 'Expert battery installation', link: '/carRepair', color: '#2196f3' },
-  { description: 'Environment-friendly recycling', link: '/serviceDetails', color: '#f44336' },
+  { description: 'High-quality Road Side Assistance', link: '/roadsideAssistant', color: '#4caf50', iconType: 'carService' },
+  { description: 'Best Mobile Auto services', link: '/mobileCarService', color: '#ff9800', iconType: 'service' },
+  { description: 'Expert Car Detailing Services', link: '/carDetailing', color: '#2196f3', iconType: 'carService' },
+  { description: 'Expert Car Contracts', link: '/carContract', color: '#f44336', iconType: 'build' },
+  { description: 'Expert Car Renewal Services', link: '/carRenewal', color: '#ff9800', iconType: 'evStation' },
+  { description: 'Expert Car Repair Services', link: '/carRepair', color: '#2196f3', iconType: 'repair' },
+  { description: 'Environment-friendly Car Services', link: '/serviceDetails', color: '#4caf50', iconType: 'recycling' },
 ];
+
 
 const HomePage = () => {
   const calculateTimeLeft = () => {
@@ -38,7 +58,7 @@ const HomePage = () => {
       const data = await fetchServicesData();
       const combinedData = data.map((item, index) => ({
         title: item.title,
-        iconCode: item.icon,  // Assuming 'item.icon' contains the numeric code
+        iconType: dummyData[index % dummyData.length].iconType,  // Map iconType from dummyData
         ...dummyData[index % dummyData.length],
       }));
       setServices(combinedData);
@@ -96,9 +116,7 @@ const HomePage = () => {
                       '&:hover': { transform: 'scale(1.05)', boxShadow: '0px 5px 10px rgba(0,0,0,0.1)' },
                     }}>
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '120px' }}>
-                      <Typography sx={{ fontSize: 48, color: 'white' }}>
-                        {String.fromCharCode(service.iconCode)}
-                      </Typography>
+                      {iconMapping[service.iconType]}
                     </Box>
                     <CardContent sx={{ padding: 1, color: 'white' }}>
                       <Typography variant="subtitle1" fontWeight="bold">

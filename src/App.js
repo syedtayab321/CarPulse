@@ -22,6 +22,7 @@ import WrantyPolicy from "./Components/MainPageComponents/WrantyPolicy";
 import MajorServices from "./Components/CommonComponents/MajorServicePage";
 import CarDetailingMainPage from "./Pages/CarDetailingMainPage";
 import CustomContactComponent from "./Components/CommonComponents/CustomContactComponent";
+import CarContractMain from "./Pages/CarContractMainPage";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='/roadsideAssistant' element={<RoadSideAssistantMainPage/>} />
           <Route path='/carRenewal' element={<CarRenewalMainPage/>} />
           <Route path='/carDetailing' element={<CarDetailingMainPage/>} />
+          <Route path='/carContract' element={<CarContractMain/>} />
       </Routes>
         <CustomContactComponent/>
         <Footer/>
