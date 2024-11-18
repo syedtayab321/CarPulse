@@ -58,7 +58,7 @@ const HomePage = () => {
       const data = await fetchServicesData();
       const combinedData = data.map((item, index) => ({
         title: item.title,
-        iconType: dummyData[index % dummyData.length].iconType,  // Map iconType from dummyData
+        iconType: dummyData[index % dummyData.length].iconType,
         ...dummyData[index % dummyData.length],
       }));
       setServices(combinedData);

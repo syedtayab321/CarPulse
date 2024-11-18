@@ -1,0 +1,86 @@
+.battery-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.battery-details-container .battery-details-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+}
+
+.battery-details-container .battery-details-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.battery-details-container .battery-details-content h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.battery-details-container .battery-details-content p {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.battery-details-container .battery-details-content p strong {
+  color: #000;
+}
+
+.battery-details-container .buy-now-btn {
+  align-self: flex-start;
+  background-color: #4b2aa4;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.battery-details-container .buy-now-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .battery-details-container {
+    flex-direction: column;
+  }
+
+  .battery-details-container .battery-details-image {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .battery-details-container .battery-details-content {
+    padding: 15px;
+  }
+
+  .battery-details-container .battery-details-content h1 {
+    font-size: 24px;
+  }
+
+  .battery-details-container .buy-now-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}

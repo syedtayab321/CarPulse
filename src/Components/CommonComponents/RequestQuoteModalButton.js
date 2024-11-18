@@ -11,11 +11,17 @@ function RequestQuoteButton() {
     return (
         <div>
             <button onClick={openQuoteModal} className="Quote-floating-button">
-                +
+                Request Quote
             </button>
+
             <RequestQuoteModal isOpen={isQuoteModalOpen} onClose={closeQuoteModal} />
         </div>
     );
 }
 
 export default RequestQuoteButton;
+
+
+const quoteText = {
+    fontSize : '10px',
+}

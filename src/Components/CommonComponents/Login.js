@@ -6,11 +6,14 @@ import * as Yup from 'yup';
 import  './css/login.css'
 import {signIn} from "../../BackendFunctions/Auth";
 import {Spinner} from "react-bootstrap";
+import ForgotPasswordModal from "./ForgotPassword";
 export  default function LoginPage(){
    const [loading,setLoading] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false);
    const navigate = useNavigate();
     return(
         <>
+            {isModalOpen && <ForgotPasswordModal onClose={() => setModalOpen(false)} />}
             <div className='main-login-section'>
                 <div className="login-container">
                     <div className="image-section">
@@ -47,7 +50,7 @@ export  default function LoginPage(){
                                 <Field type="password" id="password" name="password" placeholder="********" required/>
                                 {errors.password && <div className="error text text-danger">{errors.password}</div>}
                                 <div className="options">
-                                    <Link to="#">Forgot password?</Link>
+                                    <Link onClick={()=> setModalOpen(true)} >Forgot password?</Link>
                                 </div>
 
                                 <button type="submit" className="sign-in-btn" disabled={loading}>

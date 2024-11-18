@@ -23,6 +23,7 @@ import CarDetailingMainPage from "./Pages/CarDetailingMainPage";
 import CustomContactComponent from "./Components/CommonComponents/CustomContactComponent";
 import CarContractMain from "./Pages/CarContractMainPage";
 import RequestQuoteModalButton from "./Components/CommonComponents/RequestQuoteModalButton";
+import BatteryDetails from "./BattriesPortal/BatteryDetailsPage";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
           <Route path='/carRenewal' element={<CarRenewalMainPage/>} />
           <Route path='/carDetailing' element={<CarDetailingMainPage/>} />
           <Route path='/carContract' element={<CarContractMain/>} />
+
+           <Route path="/battery-details/:id" element={<BatteryDetails />} />
       </Routes>
         <CustomContactComponent/>
         <Footer/>

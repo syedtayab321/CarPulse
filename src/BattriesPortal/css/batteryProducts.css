@@ -1,0 +1,44 @@
+.battery-products-container {
+  padding: 10px;
+  text-align: center;
+}
+
+.battery-products-container .page-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.battery-products-container .battery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.battery-products-container .battery-card {
+  background-color: #4b2aa4;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.battery-products-container .battery-card h2,
+.battery-products-container .battery-card p{
+  color: white;
+}
+.battery-products-container .battery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgb(75, 42, 164);
+}
+
+.battery-products-container .battery-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}

@@ -12,7 +12,7 @@ const BattriesAboutUs = () => {
             <Typography variant="h4" className="about-title" fontWeight="bold" gutterBottom>
               About Us
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography className="content" paragraph cl>
               We are a trusted supplier and buyer of batteries with a commitment to quality and sustainability.
               Our mission is to provide high-quality battery solutions for a wide range of applications, from personal
               vehicles to industrial machines. With years of experience and a dedicated team, we ensure that you get the
